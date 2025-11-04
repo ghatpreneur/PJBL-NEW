@@ -1,0 +1,389 @@
+/* --- Reset & Font Dasar --- */
+body {
+  margin: 0;
+  font-family: "Be Vietnam Pro", "Noto Sans", sans-serif;
+  background-color: #fcf8f8;
+  color: #1b0d0d;
+}
+
+.design-root {
+  position: relative;
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+.layout-container {
+  display: flex;
+  height: 100%;
+  flex-grow: 1;
+  flex-direction: column;
+}
+
+/* --- Header & Navigasi --- */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  white-space: nowrap;
+  border-bottom: 1px solid #f3e7e7;
+  padding: 0.75rem 2.5rem; /* py-3 px-10 */
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* gap-4 */
+  color: #1b0d0d;
+}
+
+.logo-icon {
+  width: 1rem; /* size-4 */
+  height: 1rem; /* size-4 */
+}
+
+.header-brand-name {
+  color: #1b0d0d;
+  font-size: 1.125rem; /* text-lg */
+  font-weight: 700; /* font-bold */
+  line-height: 1.25; /* leading-tight */
+  letter-spacing: -0.015em;
+  margin: 0;
+}
+
+.header-nav {
+  display: flex;
+  flex: 1 1 0%;
+  justify-content: flex-end;
+  gap: 2rem; /* gap-8 */
+}
+
+.nav-link {
+  color: #1b0d0d;
+  font-size: 0.875rem; /* text-sm */
+  font-weight: 500; /* font-medium */
+  line-height: 1.5; /* leading-normal */
+  text-decoration: none;
+}
+
+/* --- Konten Utama --- */
+.main-content-wrapper {
+  display: flex;
+  flex: 1 1 0%;
+  justify-content: center;
+  padding: 1.25rem 10rem; /* py-5 px-40 */
+}
+
+.layout-content-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 960px;
+  flex: 1 1 0%;
+  /* Mengatur container-type untuk @container queries */
+  container-type: inline-size;
+}
+
+/* --- Hero Section --- */
+.hero-wrapper {
+  width: 100%;
+}
+
+.hero-section {
+  display: flex;
+  min-height: 480px;
+  flex-direction: column;
+  gap: 1.5rem; /* gap-6 */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem; /* p-4 */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%),
+    url("https://lh3.googleusercontent.com/aida-public/AB6AXuAUz0TQf3W6cqwrz7CnQDCICIBBBFnbMPS3SCP7W9gRNPQZiuZB3uK617P3mF3acV3iJBE_FbeSdW0fZPx4JRa3bU6UXLY5z2Gr8eHHUFDo_Kyncfhv0HEbbxD-3zMQU2ssHtcDyxFOBNZVxtshE6CbSHNBlRlmlgghqiZ4VKgFO66WFmXBc3S9GX-raWuXNaRFMeo96KrXu6ZkewoYiqWmdtfBknMcJvLZprZxDd2GQEOiRgmzan4ZCanPJvK1K-v8yTUV9CujHZGs");
+}
+
+.hero-title {
+  color: white;
+  font-size: 2.25rem; /* text-4xl */
+  font-weight: 900; /* font-black */
+  line-height: 1.25; /* leading-tight */
+  letter-spacing: -0.033em;
+  text-align: center;
+  margin: 0;
+}
+
+/* --- Tombol --- */
+.btn {
+  display: flex;
+  min-width: 84px;
+  max-width: 480px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 0.5rem; /* rounded-lg */
+  height: 2.5rem; /* h-10 */
+  padding-left: 1rem; /* px-4 */
+  padding-right: 1rem; /* px-4 */
+  font-size: 0.875rem; /* text-sm */
+  font-weight: 700; /* font-bold */
+  line-height: 1.5; /* leading-normal */
+  letter-spacing: 0.015em;
+  border: none;
+}
+
+.btn-primary {
+  background-color: #ec1313;
+  color: #fcf8f8;
+}
+
+.btn-secondary {
+  background-color: #f3e7e7;
+  color: #1b0d0d;
+}
+
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* --- Judul Bagian --- */
+.section-title {
+  color: #1b0d0d;
+  font-size: 22px;
+  font-weight: 700; /* font-bold */
+  line-height: 1.25; /* leading-tight */
+  letter-spacing: -0.015em;
+  padding: 1.25rem 1rem 0.75rem 1rem; /* px-4 pb-3 pt-5 */
+  margin: 0;
+}
+
+/* --- Services Section --- */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(158px, 1fr));
+  gap: 0.75rem; /* gap-3 */
+  padding: 1rem; /* p-4 */
+}
+
+.service-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem; /* gap-3 */
+  padding-bottom: 0.75rem; /* pb-3 */
+}
+
+.service-card-image {
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  aspect-ratio: 1 / 1;
+  background-size: cover;
+  border-radius: 0.5rem; /* rounded-lg */
+}
+
+.service-card-name {
+  color: #1b0d0d;
+  font-size: 1rem; /* text-base */
+  font-weight: 500; /* font-medium */
+  line-height: 1.5; /* leading-normal */
+  margin: 0;
+}
+
+/* --- Horizontal Scroll (Featured & Testimonials) --- */
+.horizontal-scroll-container {
+  display: flex;
+  /* --- TELAH DIPERBAIKI --- */
+  overflow-x: auto; /* Diubah dari overflow-y */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+.horizontal-scroll-container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.horizontal-scroll-content {
+  display: flex;
+  align-items: stretch;
+  padding: 1rem; /* p-4 */
+  gap: 0.75rem; /* gap-3 */
+}
+
+/* --- Featured Section --- */
+.featured-card {
+  display: flex;
+  height: 100%;
+  flex: 1 1 0%;
+  flex-direction: column;
+  gap: 1rem; /* gap-4 */
+  border-radius: 0.5rem; /* rounded-lg */
+  min-width: 240px; /* min-w-60 */
+}
+
+.featured-card-image {
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  aspect-ratio: 1 / 1;
+  background-size: cover;
+  border-radius: 0.5rem; /* rounded-lg */
+}
+
+.featured-card-name {
+  color: #1b0d0d;
+  font-size: 1rem; /* text-base */
+  font-weight: 500; /* font-medium */
+  line-height: 1.5; /* leading-normal */
+  margin: 0;
+}
+
+.featured-card-price {
+  color: #9a4c4c;
+  font-size: 0.875rem; /* text-sm */
+  font-weight: 400; /* font-normal */
+  line-height: 1.5; /* leading-normal */
+  margin: 0;
+}
+
+.view-all-button-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 0.75rem 1rem; /* px-4 py-3 */
+}
+
+/* --- Promo Section --- */
+.promo-section-wrapper {
+  width: 100%;
+  padding: 2.5rem 1rem 0.75rem 1rem; /* px-4 py-10 (py-10 disesuaikan) */
+}
+
+.promo-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* gap-6 */
+}
+
+.promo-image {
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  aspect-ratio: 16 / 9;
+  background-size: cover;
+  border-radius: 0.5rem; /* rounded-lg */
+  background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAUQXYzxt5o7IO-tZLVoXPm4ClUmsNiJFllirOfNvG6BbY57YSWEOU8b1oqbEyKRinN1XpTZ1c473lQ4RSOVCmaGsEi9-1Dm8P41TMecSYZGnDfnLHDSqGhIc9UhXMfO5-41mcXFzKhbJuFR2gP4E5bZIUWuS9GugNX_Vmx0FlIhmkUEcx3-VZOaLZIoL9jEsDx_m_57WWO87kIpPnTTS_SA0pawvAQtUGBgUGfLexl1TBVLf34A_pS9aMTzcNF0yhzXirs_ySRWxJE");
+}
+
+.promo-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* gap-6 */
+}
+
+.promo-title {
+  color: #1b0d0d;
+  font-size: 2.25rem; /* text-4xl */
+  font-weight: 900; /* font-black */
+  line-height: 1.25; /* leading-tight */
+  letter-spacing: -0.033em;
+  text-align: center;
+  margin: 0;
+}
+
+.promo-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem; /* gap-3 */
+}
+
+/* --- Testimonials Section --- */
+.testimonial-card {
+  display: flex;
+  height: 100%;
+  flex: 1 1 0%;
+  flex-direction: column;
+  gap: 1rem; /* gap-4 */
+  border-radius: 0.5rem; /* rounded-lg */
+  min-width: 160px; /* min-w-40 */
+}
+
+.testimonial-image {
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  aspect-ratio: 1 / 1;
+  background-size: cover;
+  border-radius: 0.5rem; /* rounded-lg */
+}
+
+.testimonial-name {
+  color: #1b0d0d;
+  font-size: 1rem; /* text-base */
+  font-weight: 500; /* font-medium */
+  line-height: 1.5; /* leading-normal */
+  margin: 0;
+}
+
+.testimonial-quote {
+  color: #9a4c4c;
+  font-size: 0.875rem; /* text-sm */
+  font-weight: 400; /* font-normal */
+  line-height: 1.5; /* leading-normal */
+  margin: 0;
+}
+
+/* --- Container Queries (Responsive) --- */
+
+/* @[480px] */
+@container (min-width: 480px) {
+  .hero-wrapper {
+    padding: 1rem; /* @[480px]:p-4 */
+  }
+  .hero-section {
+    gap: 2rem; /* @[480px]:gap-8 */
+    border-radius: 0.5rem; /* @[480px]:rounded-lg */
+  }
+  .hero-title,
+  .promo-title {
+    font-size: 3rem; /* @[480px]:text-5xl */
+    font-weight: 900; /* @[480px]:font-black */
+    line-height: 1.25; /* @[480px]:leading-tight */
+    letter-spacing: -0.033em; /* @[480px]:tracking-[-0.033em] */
+  }
+  .btn {
+    height: 3rem; /* @[480px]:h-12 */
+    padding-left: 1.25rem; /* @[480px]:px-5 */
+    padding-right: 1.25rem; /* @[480px]:px-5 */
+    font-size: 1rem; /* @[480px]:text-base */
+    font-weight: 700; /* @[480px]:font-bold */
+    line-height: 1.5; /* @[480px]:leading-normal */
+    letter-spacing: 0.015em; /* @[480px]:tracking-[0.015em] */
+  }
+  .promo-section {
+    gap: 2rem; /* @[480px]:gap-8 */
+  }
+  .promo-image {
+    height: auto; /* @[480px]:h-auto */
+    min-width: 400px; /* @[480px]:min-w-[400px] */
+  }
+  .promo-content {
+    min-width: 400px; /* @[480px]:min-w-[400px] */
+    gap: 2rem; /* @[480px]:gap-8 */
+  }
+}
+
+/* @[864px] */
+@container (min-width: 864px) {
+  .promo-section {
+    flex-direction: row; /* @[864px]:flex-row */
+  }
+  .promo-image {
+    width: 100%; /* @[864px]:w-full */
+  }
+  .promo-content {
+    justify-content: center; /* @[864px]:justify-center */
+  }
+}
