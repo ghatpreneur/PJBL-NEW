@@ -1303,3 +1303,406 @@ STYLE HALAMAN DETAIL PRODUK
     font-size: 40px;
   }
 }
+
+/* Warna yang digunakan */
+:root {
+  --primary-text-color: #161313;
+  --light-bg-color: #efecec;
+  --main-bg-color: #f5f5f5; /* Ganti dari stone-50 */
+  --border-color: #dfd9d8;
+  --placeholder-color: #7d6b68;
+  --button-bg-color: #b18c86;
+}
+
+/* Reset dan Container Utama */
+.main-container {
+  position: relative;
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  flex-direction: column;
+  background-color: var(--main-bg-color);
+  overflow-x: hidden;
+}
+
+.layout-wrapper {
+  display: flex;
+  height: 100%;
+  flex-grow: 1;
+  flex-direction: column;
+}
+
+/* --- HEADER / Navigasi --- */
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  white-space: nowrap;
+  border-bottom: 1px solid var(--light-bg-color);
+  padding: 12px 40px; /* px-10 py-3 */
+}
+
+.header-logo-group {
+  display: flex;
+  align-items: center;
+  gap: 16px; /* gap-4 */
+  color: var(--primary-text-color);
+}
+
+.logo-icon {
+  width: 16px; /* size-4 */
+  height: 16px; /* size-4 */
+}
+
+.logo-text {
+  color: var(--primary-text-color);
+  font-size: 18px; /* text-lg */
+  font-weight: 700; /* font-bold */
+  line-height: 1.25; /* leading-tight */
+  letter-spacing: -0.015em; /* tracking-[-0.015em] */
+}
+
+.header-nav-actions {
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+  gap: 32px; /* gap-8 */
+}
+
+.header-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 36px; /* gap-9 */
+}
+
+.nav-link {
+  color: var(--primary-text-color);
+  font-size: 14px; /* text-sm */
+  font-weight: 500; /* font-medium */
+  line-height: 1.5; /* leading-normal */
+  text-decoration: none;
+}
+
+.header-action-buttons {
+  display: flex;
+  gap: 8px; /* gap-2 */
+}
+
+.action-button {
+  display: flex;
+  max-width: 480px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 8px; /* rounded-lg */
+  height: 40px; /* h-10 */
+  background-color: var(--light-bg-color);
+  color: var(--primary-text-color);
+  gap: 8px; /* gap-2 */
+  font-size: 14px; /* text-sm */
+  font-weight: 700; /* font-bold */
+  line-height: 1.5; /* leading-normal */
+  letter-spacing: 0.015em; /* tracking-[0.015em] */
+  min-width: 0;
+  padding: 0 10px; /* px-2.5 */
+  border: none;
+}
+
+.action-icon {
+  color: var(--primary-text-color);
+}
+
+/* --- KONTEN UTAMA --- */
+.content-wrapper {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  padding: 20px 24px; /* py-5 px-6 */
+  gap: 4px; /* gap-1 */
+}
+
+.form-column {
+  display: flex;
+  flex-direction: column;
+  width: 320px; /* w-80 */
+}
+
+.form-title {
+  color: var(--primary-text-color);
+  letter-spacing: -0.025em; /* tracking-light */
+  font-size: 28px; /* text-[28px] */
+  font-weight: 700; /* font-bold */
+  line-height: 1.25; /* leading-tight */
+  padding: 20px 16px 12px 16px; /* pt-5 pb-3 px-4 */
+  text-align: left;
+}
+
+.form-group {
+  display: flex;
+  max-width: 480px;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 16px; /* gap-4 */
+  padding: 12px 16px; /* py-3 px-4 */
+}
+
+.form-label {
+  display: flex;
+  flex-direction: column;
+  min-width: 160px; /* min-w-40 */
+  flex: 1;
+}
+
+.form-input,
+.form-textarea {
+  display: flex;
+  width: 100%;
+  min-width: 0;
+  flex: 1;
+  resize: none;
+  overflow: hidden;
+  border-radius: 8px; /* rounded-lg */
+  color: var(--primary-text-color);
+  border: 1px solid var(--border-color);
+  background-color: var(--main-bg-color);
+  padding: 15px; /* p-[15px] */
+  font-size: 16px; /* text-base */
+  font-weight: 400; /* font-normal */
+  line-height: 1.5; /* leading-normal */
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-input {
+  height: 56px; /* h-14 */
+}
+
+.form-textarea {
+  min-height: 144px; /* min-h-36 */
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  outline: 0;
+  border-color: var(--border-color); /* Fokus border yang sama */
+  box-shadow: none; /* Menghapus ring/shadow default */
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: var(--placeholder-color);
+}
+
+.form-submit-group {
+  display: flex;
+  justify-content: flex-start;
+  padding: 12px 16px; /* py-3 px-4 */
+}
+
+.submit-button {
+  display: flex;
+  min-width: 84px; /* min-w-[84px] */
+  max-width: 480px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 8px; /* rounded-lg */
+  height: 40px; /* h-10 */
+  padding: 0 16px; /* px-4 */
+  background-color: var(--button-bg-color);
+  color: var(--primary-text-color);
+  font-size: 14px; /* text-sm */
+  font-weight: 700; /* font-bold */
+  line-height: 1.5; /* leading-normal */
+  letter-spacing: 0.015em; /* tracking-[0.015em] */
+  border: none;
+}
+
+/* --- Kolom Info Kontak --- */
+.contact-info-column {
+  display: flex;
+  flex-direction: column;
+  max-width: 960px;
+  flex: 1;
+}
+
+.contact-title {
+  color: var(--primary-text-color);
+  letter-spacing: -0.025em;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.25;
+  padding: 20px 16px 12px 16px;
+  text-align: left;
+}
+
+.contact-detail {
+  color: var(--primary-text-color);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  padding: 4px 16px 12px 16px; /* pt-1 pb-3 px-4 */
+}
+
+.social-media-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 8px; /* gap-2 */
+  padding: 0 16px; /* px-4 */
+}
+
+.social-media-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px; /* gap-2 */
+  background-color: var(--main-bg-color);
+  padding: 10px 0; /* py-2.5 */
+  text-align: center;
+  width: 80px; /* w-20 */
+}
+
+.social-media-icon-bg {
+  border-radius: 9999px; /* rounded-full */
+  background-color: var(--light-bg-color);
+  padding: 10px; /* p-2.5 */
+}
+
+.social-media-icon {
+  color: var(--primary-text-color);
+}
+
+.social-media-label {
+  color: var(--primary-text-color);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.map-image-group {
+  padding: 12px 16px; /* py-3 px-4 */
+  display: flex;
+}
+
+.map-image {
+  width: 100%;
+  aspect-ratio: 16 / 9; /* aspect-video */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 8px; /* rounded-lg */
+  object-fit: cover;
+}
+
+/* Penyesuaian Responsif sederhana (Menggunakan Media Query untuk Flex) */
+@media (max-width: 768px) {
+  .header-nav-links {
+    display: none; /* Sembunyikan link navigasi di layar kecil */
+  }
+
+  .header-container {
+    padding: 12px 20px; /* Padding lebih kecil */
+  }
+
+  .header-nav-actions {
+    gap: 16px;
+  }
+
+  .content-wrapper {
+    flex-direction: column; /* Tumpuk kolom formulir dan kontak */
+    align-items: center;
+    padding: 20px 10px;
+  }
+
+  .form-column,
+  .contact-info-column {
+    width: 100%;
+    max-width: 480px; /* Batasi lebar untuk tampilan lebih baik */
+  }
+
+  .form-title,
+  .contact-title {
+    padding-left: 0;
+    padding-right: 0;
+    text-align: center;
+  }
+
+  .form-group,
+  .form-submit-group,
+  .contact-detail,
+  .social-media-group,
+  .map-image-group {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+/* --- Tambahan untuk Footer --- */
+:root {
+  /* Tambah/Ganti warna sesuai kebutuhan Footer. Dari kode Tailwind, warna ini mirip dengan '#9a564c' */
+  --footer-link-color: #9a564c;
+  --footer-bg-color: #fcf9f8; /* Ganti dari bg-[#fcf9f8] */
+}
+
+.footer-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: var(--footer-bg-color); /* Latar belakang footer */
+}
+
+.footer-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  max-width: 960px; /* Lebar maksimal seperti di kode aslinya */
+  gap: 24px; /* gap-6 */
+  padding: 40px 20px; /* py-10 px-5 */
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.footer-links-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 24px; /* gap-6 */
+}
+
+.footer-link {
+  color: var(--footer-link-color);
+  font-size: 16px; /* text-base */
+  font-weight: 400; /* font-normal */
+  line-height: 1.5; /* leading-normal */
+  min-width: 160px; /* min-w-40, untuk menata di layar lebar */
+  text-decoration: none;
+}
+
+.social-media-footer-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px; /* gap-4 */
+}
+
+.social-media-footer-icon {
+  color: var(--footer-link-color); /* Warna ikon sama dengan link */
+}
+
+.copyright-text {
+  color: var(--footer-link-color);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin-top: 0; /* Pastikan tidak ada margin tambahan */
+}
+
+/* Media Query untuk tata letak lebar (seperti @[480px]:flex-row @[480px]:justify-around) */
+@media (min-width: 480px) {
+  .footer-links-group {
+    justify-content: space-around;
+  }
+}
