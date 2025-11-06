@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-g" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sava Fashion - Vue</title>
+    <title>Sava Fashion - JS Native</title>
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
     <link
       rel="stylesheet"
@@ -13,137 +13,176 @@
   </head>
   <body>
     <div id="app">
-      <div class="design-root">
-        <div class="layout-container">
-          <header class="header">
-            <a href="#" @click.prevent="showPage('home')" class="header-logo-link">
-              <div class="header-logo">
-                <div class="logo-icon">
-                  <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M24 18.4228L42 11.475V34.3663C42 34.7796 41.7457 35.1504 41.3601 35.2992L24 42V18.4228Z"
-                      fill="currentColor"
-                    ></path>
-                    <path
-                      d="M24 8.18819L33.4123 11.574L24 15.2071L14.5877 11.574L24 8.18819ZM9 15.8487L21 20.4805V37.6263L9 32.9945V15.8487ZM27 37.6263V20.4805L39 15.8487V32.9945L27 37.6263ZM25.354 2.29885C24.4788 1.98402 23.5212 1.98402 22.646 2.29885L4.98454 8.65208C3.7939 9.08038 3 10.2097 3 11.475V34.3663C3 36.0196 4.01719 37.5026 5.55962 38.098L22.9197 44.7987C23.6149 45.0671 24.3851 45.0671 25.0803 44.7987L42.4404 38.098C43.9828 37.5026 45 36.0196 45 34.3663V11.475C45 10.2097 44.2061 9.08038 43.0155 8.65208L25.354 2.29885Z"
-                      fill="currentColor"
-                    ></path>
-                  </svg>
+      <div id="main-view" class="page-content">
+        <div class="design-root">
+          <div class="layout-container">
+            <header id="main-header" class="header">
+              <a href="#" data-page="home" class="header-logo-link">
+                <div class="header-logo">
+                  <div class="logo-icon">
+                    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M24 18.4228L42 11.475V34.3663C42 34.7796 41.7457 35.1504 41.3601 35.2992L24 42V18.4228Z"
+                        fill="currentColor"
+                      ></path>
+                      <path
+                        d="M24 8.18819L33.4123 11.574L24 15.2071L14.5877 11.574L24 8.18819ZM9 15.8487L21 20.4805V37.6263L9 32.9945V15.8487ZM27 37.6263V20.4805L39 15.8487V32.9945L27 37.6263ZM25.354 2.29885C24.4788 1.98402 23.5212 1.98402 22.646 2.29885L4.98454 8.65208C3.7939 9.08038 3 10.2097 3 11.475V34.3663C3 36.0196 4.01719 37.5026 5.55962 38.098L22.9197 44.7987C23.6149 45.0671 24.3851 45.0671 25.0803 44.7987L42.4404 38.098C43.9828 37.5026 45 36.0196 45 34.3663V11.475C45 10.2097 44.2061 9.08038 43.0155 8.65208L25.354 2.29885Z"
+                        fill="currentColor"
+                      ></path>
+                    </svg>
+                  </div>
+                  <h2 class="header-brand-name">Sava Fashion</h2>
                 </div>
-                <h2 class="header-brand-name">Sava Fashion</h2>
-              </div>
-            </a>
-            <nav class="header-nav">
-              <a
-                v-for="link in navLinks"
-                :href="link.href"
-                @click.prevent="showPage(link.page)"
-                class="nav-link"
-                :class="{ 'nav-active': currentPage === link.page }"
-              >
-                {{ link.name }}
               </a>
-            </nav>
-          </header>
+              <nav id="nav-links-container" class="header-nav"></nav>
+            </header>
 
-          <main class="main-content-wrapper">
-            <div class="layout-content-container">
-              <div v-if="currentPage === 'home'">
-                <div class="hero-wrapper">
-                  <div class="hero-section">
-                    <h1 class="hero-title">Crafted Elegance, Uniquely You</h1>
-                    <button @click="showPage('products')" class="btn btn-primary">
-                      <span class="truncate">Shop Our Collection</span>
+            <main class="main-content-wrapper">
+              <div class="layout-content-container">
+                <div id="page-home" class="page-content">
+                  <div class="hero-wrapper">
+                    <div class="hero-section">
+                      <h1 class="hero-title">Crafted Elegance, Uniquely You</h1>
+                      <button data-page="products" class="btn btn-primary">
+                        <span class="truncate">Shop Our Collection</span>
+                      </button>
+                    </div>
+                  </div>
+
+                  <h2 class="section-title">Our Services</h2>
+                  <div id="services-grid-container" class="services-grid"></div>
+
+                  <h2 class="section-title">My Portfolio</h2>
+                  <div class="horizontal-scroll-container">
+                    <div id="portfolio-scroll-container" class="horizontal-scroll-content"></div>
+                  </div>
+                  <div class="view-all-button-wrapper">
+                    <button data-page="portfolio" class="btn btn-secondary">
+                      <span class="truncate">Show All Portfolio</span>
+                    </button>
+                  </div>
+
+                  <div class="promo-section-wrapper">
+                    <div class="promo-section">
+                      <div class="promo-image"></div>
+                      <div class="promo-content">
+                        <h1 class="promo-title">Your Style, Your Way. Ready-to-wear or crafted just for you.</h1>
+                        <div class="promo-buttons">
+                          <button class="btn btn-primary">
+                            <span class="truncate">Custom Now</span>
+                          </button>
+                          <button class="btn btn-secondary">
+                            <span class="truncate">Check Out Now</span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <h2 class="section-title">What Our Customers Say</h2>
+                  <div class="horizontal-scroll-container">
+                    <div id="testimonials-container" class="horizontal-scroll-content"></div>
+                  </div>
+                </div>
+
+                <div id="page-products" class="product-page-container page-content page-hidden">
+                  <div class="breadcrumbs">
+                    <a href="#" data-page="home" class="breadcrumb-link">Home</a>
+                    <span class="breadcrumb-separator">/</span>
+                    <span class="breadcrumb-active">Products</span>
+                  </div>
+                  <h2 class="product-page-title">Products</h2>
+
+                  <div class="filter-control-wrapper">
+                    <div class="filter-control">
+                      <label class="filter-label">
+                        <span class="truncate">All Products</span>
+                        <input type="radio" class="filter-radio" name="product-filter" value="all" checked />
+                      </label>
+                      <label class="filter-label">
+                        <span class="truncate">Ready to Use</span>
+                        <input type="radio" class="filter-radio" name="product-filter" value="shopee" />
+                      </label>
+                      <label class="filter-label">
+                        <span class="truncate">Custom</span>
+                        <input type="radio" class="filter-radio" name="product-filter" value="custom" />
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="sort-wrapper">
+                    </div>
+
+                  <div id="product-grid-container" class="product-grid"></div>
+                </div>
+
+                <div id="page-portfolio" class="product-page-container page-content page-hidden">
+                  <div class="breadcrumbs">
+                    <a href="#" data-page="home" class="breadcrumb-link">Home</a>
+                    <span class="breadcrumb-separator">/</span>
+                    <span class="breadcrumb-active">My Portfolio</span>
+                  </div>
+                  <h2 class="product-page-title">My Portfolio</h2>
+                  <p class="section-subtitle">A collection of our finest work.</p>
+                  
+                  <div id="portfolio-grid-container" class="product-grid"></div>
+
+                  <div class="view-all-button-wrapper">
+                    <button data-page="home" class="btn btn-secondary">
+                      <span class="truncate">← Back to Home</span>
                     </button>
                   </div>
                 </div>
-
-                <h2 class="section-title">Our Services</h2>
-                <div class="services-grid">
-                  <div v-for="service in services" class="service-card">
-                    <div class="service-card-image" :style="{ backgroundImage: 'url(' + service.img + ')' }"></div>
-                    <p class="service-card-name">{{ service.name }}</p>
+                
+                <div id="page-about" class="product-page-container page-content page-hidden">
+                  <div class="breadcrumbs">
+                    <a href="#" data-page="home" class="breadcrumb-link">Home</a>
+                    <span class="breadcrumb-separator">/</span>
+                    <span class="breadcrumb-active">About Us</span>
                   </div>
-                </div>
-
-                <h2 class="section-title">Featured Collections</h2>
-                <div class="horizontal-scroll-container">
-                  <div class="horizontal-scroll-content">
-                    <div v-for="item in featured" class="featured-card">
-                      <div class="featured-card-image" :style="{ backgroundImage: 'url(' + item.img + ')' }"></div>
-                      <div>
-                        <p class="featured-card-name">{{ item.name }}</p>
-                        <p class="featured-card-price">{{ item.price }}</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="view-all-button-wrapper">
-                  <button @click="showPage('products')" class="btn btn-secondary">
-                    <span class="truncate">View All Products</span>
-                  </button>
+                  <h2 class="product-page-title">About Sava Fashion</h2>
+                  <p class="page-description">
+                    Welcome to Sava Fashion, where style meets elegance. We are dedicated to providing the highest quality apparel, from custom designs to ready-to-wear collections.
+                    Our mission is to make you feel confident and unique.
+                  </p>
                 </div>
 
-                <div class="promo-section-wrapper">
-                  <div class="promo-section">
-                    <div class="promo-image"></div>
-                    <div class="promo-content">
-                      <h1 class="promo-title">Your Style, Your Way. Ready-to-wear or crafted just for you.</h1>
-                      <div class="promo-buttons">
-                        <button class="btn btn-primary">
-                          <span class="truncate">Custom Now</span>
-                        </button>
-                        <button class="btn btn-secondary">
-                          <span class="truncate">Check Out Now</span>
-                        </button>
-                      </div>
-                    </div>
+                <div id="page-contact" class="product-page-container page-content page-hidden">
+                  <div class="breadcrumbs">
+                    <a href="#" data-page="home" class="breadcrumb-link">Home</a>
+                    <span class="breadcrumb-separator">/</span>
+                    <span class="breadcrumb-active">Contact</span>
                   </div>
+                  <h2 class="product-page-title">Contact Us</h2>
+                  <p class="page-description">
+                    Have questions? We'd love to hear from you.
+                  </p>
+                  <form class="contact-form">
+                    <label class="form-label" for="name">Name</label>
+                    <input class="form-input" type="text" id="name" />
+                    
+                    <label class="form-label" for="email">Email</label>
+                    <input class="form-input" type="email" id="email" />
+
+                    <label class="form-label" for="message">Message</label>
+                    <textarea class="form-textarea" id="message" rows="5"></textarea>
+
+                    <button class="btn btn-primary form-button">
+                      <span class="truncate">Send Message</span>
+                    </button>
+                  </form>
                 </div>
 
-                <h2 class="section-title">What Our Customers Say</h2>
-                <div class="horizontal-scroll-container">
-                  <div class="horizontal-scroll-content">
-                    <div v-for="testimonial in testimonials" class="testimonial-card">
-                      <div class="testimonial-image" :style="{ backgroundImage: 'url(' + testimonial.img + ')' }"></div>
-                      <div>
-                        <p class="testimonial-name">{{ testimonial.name }}</p>
-                        <p class="testimonial-quote">{{ testimonial.quote }}</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
               </div>
-              <div v-if="currentPage === 'products'" class="product-page-container">
-                <h2 class="section-title">All Products</h2>
-                <p class="section-subtitle">Browse our complete collection.</p>
-
-                <div class="services-grid">
-                  <div v-for="item in featured" class="service-card">
-                    <div class="service-card-image" :style="{ backgroundImage: 'url(' + item.img + ')' }"></div>
-                    <p class="service-card-name">{{ item.name }}</p>
-                    <p class="featured-card-price">{{ item.price }}</p>
-                  </div>
-                  <div v-for="item in services" class="service-card">
-                    <div class="service-card-image" :style="{ backgroundImage: 'url(' + item.img + ')' }"></div>
-                    <p class="service-card-name">{{ item.name }}</p>
-                    <p class="featured-card-price">{{ item.price }}</p>
-                  </div>
-                </div>
-
-                <div class="view-all-button-wrapper">
-                  <button @click="showPage('home')" class="btn btn-secondary">
-                    <span class="truncate">&larr; Back to Home</span>
-                  </button>
-                </div>
-              </div>
-              </div>
-          </main>
+            </main>
+          </div>
         </div>
       </div>
+
+      <div id="page-detail" class="page-content page-hidden">
+        </div>
     </div>
 
-    <script src="https://unpkg.com/vue@3"></script>
     <script src="home.js"></script>
   </body>
 </html>
