@@ -1181,3 +1181,125 @@ STYLE HALAMAN DETAIL PRODUK
   margin-top: 1rem;
   max-width: 200px;
 }
+/* == ABOUT US PAGE (Enhanced Styling) ==*/
+.page-about-container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 24px;
+  background: #fcf9f8;
+  color: #1b110d;
+  font-family: "Work Sans", "Noto Sans", sans-serif;
+}
+
+.heading-lg {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.section-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 32px 0 16px;
+}
+
+/* Two-column layout */
+.two-col {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 16px 0;
+}
+
+.media {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 12px;
+  aspect-ratio: 16/9;
+  min-height: 260px;
+}
+
+.text-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+}
+
+.headline {
+  font-size: 34px;
+  font-weight: 900;
+  margin: 0;
+}
+
+.lead {
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 0;
+  color: #3c2d27;
+}
+
+/* Features grid */
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 18px;
+  border: 1px solid #e7d5cf;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 15px;
+  background-color: #fff;
+}
+
+/* CTA button (quote) */
+.cta-button {
+  display: inline-block;
+  padding: 12px 18px;
+  border-radius: 10px;
+  background-color: #d44211;
+  color: #fff;
+  font-weight: 700;
+  font-size: 14px;
+  text-align: center;
+  margin-top: 12px;
+  max-width: 320px;
+}
+
+/* Founder subtitle */
+.eyebrow {
+  font-size: 15px;
+  font-weight: 500;
+  color: #7a625a;
+}
+
+/* Responsive layout */
+@media (min-width: 768px) {
+  .two-col {
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .media {
+    width: 50%;
+    min-height: 320px;
+  }
+
+  .text-column {
+    width: 50%;
+  }
+
+  .headline {
+    font-size: 40px;
+  }
+}
