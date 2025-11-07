@@ -32,23 +32,23 @@ document.addEventListener("DOMContentLoaded", () => {
     // Data "Our Services" (Halaman Home)
     services: [
       {
-        name: "Baju Dress",
-        img: "https://images.pexels.com/photos/2235071/pexels-photo-2235071.jpeg",
+        name: "women's dresses",
+        img: "photo/dres dewasa.png",
         price: "$120",
       },
       {
-        name: "Baju Anak",
-        img: "https://images.pexels.com/photos/1619690/pexels-photo-1619690.jpeg",
+        name: "children's dresses",
+        img: "photo/dres anak.jpg",
         price: "$80",
       },
       {
-        name: "Baju Pria",
-        img: "https://images.pexels.com/photos/842811/pexels-photo-842811.jpeg",
+        name: "men's clothes",
+        img: "photo/pria.png",
         price: "$150",
       },
       {
         name: "Custom",
-        img: "https://images.pexels.com/photos/42408/fabric-texture-fabric-texture-42408.jpeg",
+        img: "photo/custom.png",
         price: "$200",
       },
     ],
@@ -58,17 +58,17 @@ document.addEventListener("DOMContentLoaded", () => {
       {
         name: "Elegant Dresses",
         price: "$120",
-        img: "https://lh3.googleusercontent.com/aida-public/AB6AXuD9NYY6NeqNtTUSGWlvBru_O05UrHTXhLGQ_DjyM3O8ps8Guhk2w3zqXE_m840aKu_ujY0yo6ko9LggAVAlewWy_LYj-fiOJX-pb0tL9K6CJJOPu0NaImQmLk629X2NF4TWIXhL5gMzpQs8Qc9AuJRRXaSUEl5h1MNy1Fgx_7_v63GFUGY8nEMznQNd7SkNPavLX0EGkjPlkjLDMJp6Tu_VD5rwTBQIQC7ojTTpbIyMJvivq9vmk_JluHyTx_qkeg2iGEg_pVQp3eim",
+        img: "photo/elegant dres.jpg",
       },
       {
         name: "Kids Fashion",
         price: "$80",
-        img: "https://lh3.googleusercontent.com/aida-public/AB6AXuBpyaKjX3R7UpFK_hvdgM4SP37qKH7LZFDF2TB5txbR6Qe2va4j5axATYYO57xy3m1k3_qfsDw9y1xOdkJobZP5SgfVN25qL6zLvAhwrZLT0c14pg7KMyuyaIqXxlR-jI5znBqMKOZ3IrtwRAdxpe6XnQg4wrxZTnoIaAZucGUSxUHpRS0zb9eoLSmZwowmmMjrh5387PIPn48FAJ5l7Mf8I2UlfWKHJcN9psO-vtTYzHWI5iASfQ7Y96kru0hx75FHhhs6tEk3AsY7",
+        img: "photo/dres anak.jpg",
       },
       {
         name: "Men's Style",
         price: "$150",
-        img: "https://lh3.googleusercontent.com/aida-public/AB6AXuCstBGonQ2ntdJFxXqljMBjlEgNeC8lMbVs_x6e8okv6cl75jbnOto2nnoLwWrNa-H5XvkmfT5QjOIfqLgxllP7em4_RyGLJQ1_DUmB0vyKXInO1OJJBn_LjerhF5DFZkEEPC0WjWegnsNgOfYs-VeUNxeruZ8MKWH5jSkEU0E6X1o8aaVWvgt1RDmGAbyE0t4wj0_VPC2IlZG8UK0czeKbfQeqcaTst-3_wOGJgrggOndj_jPW03rM5sG5l6e09EoWHdgIGK-H9Qlk",
+        img: "photo/pria1.png",
       },
       {
         name: "Casual Scarf",
