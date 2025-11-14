@@ -1,0 +1,242 @@
+/* --- Variabel Warna & Font (Biar gampang diganti) --- */
+:root {
+  --font-family: Manrope, "Noto Sans", sans-serif;
+  --bg-color: #fbf8f9;
+  --text-primary: #1b0e12;
+  --text-secondary: #955065;
+  --primary-accent: #e75581;
+  --bg-accent-light: #f3e8eb;
+  --border-color: #e6d1d7;
+}
+
+/* --- Basic Reset & Body --- */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family);
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  min-height: 100vh;
+}
+
+/* --- Layout Utama --- */
+.main-container {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  padding: 20px 24px; /* Dulu: py-5 px-6 */
+  box-sizing: border-box; /* Biar padding gak bikin overflow */
+  justify-content: center;
+  gap: 4px; /* Dulu: gap-1 */
+}
+
+/* --- Sidebar --- */
+.sidebar {
+  width: 320px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+  padding: 1rem; 
+  min-height: 700px;
+
+  /* FINAL FIX: PASTIIN SIDEBAR SELALU DI ATAS */
+  position: relative; 
+  z-index: 100; /* Angka yang sangat tinggi */
+}
+
+.sidebar h1 {
+  font-size: 1rem; /* Dulu: text-base */
+  font-weight: 500; /* Dulu: font-medium */
+  margin: 0 0 1rem 0; /* Kasih jarak bawah */
+}
+
+.menu-items {
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* Dulu: gap-2 */
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* Dulu: gap-3 */
+  padding: 8px 12px; /* Dulu: px-3 py-2 */
+  border-radius: 0.5rem; /* Dulu: rounded-lg */
+  text-decoration: none;
+  color: var(--text-primary);
+  cursor: pointer;
+}
+
+.menu-item.active {
+  background-color: var(--bg-accent-light); /* Dulu: bg-[#f3e8eb] */
+}
+
+.menu-item p {
+  margin: 0;
+  font-size: 0.875rem; /* Dulu: text-sm */
+  font-weight: 500;
+}
+
+.menu-item svg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+
+/* --- Tombol (Button) --- */
+.btn {
+  cursor: pointer;
+  border: none;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem; /* Dulu: text-sm */
+}
+
+.btn-primary {
+  height: 40px; 
+  padding: 0 1rem; 
+  background-color: var(--primary-accent); 
+  color: var(--bg-color); 
+  font-weight: 700; 
+  
+  /* INI YANG WAJIB */
+  position: relative; 
+  z-index: 10;      
+  text-decoration: none; 
+
+  /* property lain yang udah ada sebelumnya */
+  cursor: pointer;
+  border: none;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem; 
+}
+
+.btn-status {
+  height: 32px; /* Dulu: h-8 */
+  padding: 0 1rem; /* Dulu: px-4 */
+  background-color: var(--bg-accent-light);
+  color: var(--text-primary);
+  font-weight: 500; /* Dulu: font-medium */
+  width: 100%; /* Dulu: w-full */
+}
+
+/* --- Konten Utama --- */
+.content {
+  flex: 1; /* Biar ngisi sisa space */
+  max-width: 960px; /* Dulu: max-w-[960px] */
+  display: flex;
+  flex-direction: column;
+}
+
+.content-header {
+  padding: 1rem; /* Dulu: p-4 */
+}
+
+.content-header h1 {
+  font-size: 32px;
+  font-weight: 700; /* Dulu: font-bold */
+  margin: 0;
+}
+
+/* --- Tabel --- */
+.table-wrapper {
+  padding: 12px 1rem; /* Dulu: px-4 py-3 */
+}
+
+.table-container {
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  background-color: var(--bg-color);
+}
+
+.product-table {
+  width: 100%;
+  border-collapse: collapse; /* Ini penting biar border-nya nyatu */
+}
+
+.product-table th,
+.product-table td {
+  padding: 8px 1rem; /* Dulu: px-4 py-2 */
+  text-align: left;
+  font-size: 0.875rem;
+  vertical-align: middle; /* Biar rapi di tengah */
+}
+
+.product-table th {
+  font-weight: 500;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.product-table td {
+  height: 72px; /* Dulu: h-[72px] */
+  border-top: 1px solid var(--border-color);
+}
+
+/* --- Styling Kolom Spesifik --- */
+.td-checkbox input[type="checkbox"] {
+  height: 20px; /* Dulu: h-5 */
+  width: 20px; /* Dulu: w-5 */
+  border-radius: 0.25rem;
+  border: 2px solid var(--border-color);
+}
+
+.td-image .image-circle {
+  width: 40px; /* Dulu: w-10 */
+  height: 40px;
+  border-radius: 50%; /* Dulu: rounded-full */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.td-price {
+  color: var(--text-secondary);
+}
+
+.td-actions {
+  color: var(--text-secondary);
+  font-weight: 700; /* Dulu: font-bold */
+}
+/* --- CSS Tambahan Buat Form --- */
+.form-wrapper {
+  padding: 1rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem; /* Kasih jarak antar input */
+}
+
+.form-group label {
+  display: block; /* Bikin labelnya di atas input */
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+
+.form-group input[type="text"] {
+  width: 100%; /* Biar inputnya full-width */
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  background-color: #fff;
+  box-sizing: border-box; /* Biar padding gak bikin overflow */
+}
+
+.btn-secondary {
+  height: 40px;
+  padding: 0 1rem;
+  background-color: var(--bg-accent-light);
+  color: var(--text-primary);
+  font-weight: 700;
+  text-decoration: none;
+}
