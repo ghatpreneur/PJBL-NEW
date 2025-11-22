@@ -229,9 +229,9 @@ body {
   margin: 0;
 }
 .featured-card-price {
-  color: #7d6c68;
+  color: #ef4444;
   font-size: 0.875rem;
-  font-weight: 400;
+  font-weight: 600;
   margin: 0;
 }
 .view-all-button-wrapper {
@@ -357,9 +357,9 @@ body {
 }
 .product-page-container { padding-top: 1rem; }
 .service-card .featured-card-price {
-  color: #7d6c68;
+  color: #ef4444;
   font-size: 0.875rem;
-  font-weight: 400;
+  font-weight: 600;
   line-height: 1.5;
   margin: -5px 0 0 0;
   padding: 0;
@@ -478,8 +478,8 @@ body {
 /* --- Grid Produk (Halaman Produk) --- */
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(158px, 1fr));
-  gap: 0.75rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
   padding: 1rem;
 }
 .product-card {
@@ -501,21 +501,39 @@ body {
   font-size: 1rem;
   font-weight: 500;
   margin: 0;
+  padding-left: 0.5rem;
 }
 .product-card-price {
-  color: #7d6c68;
+  color: #ef4444;
   font-size: 0.875rem;
+  font-weight: 600;
   margin: 0;
+  padding-left: 0.5rem;
 }
 .product-card-rating {
   color: #7d6c68;
   font-size: 0.875rem;
   margin: 0;
+  padding-left: 0.5rem;
 }
-.clickable-card { cursor: pointer; }
+.product-card-rating .status-sold {
+  color: #ef4444;
+  font-weight: 600;
+}
+.product-card-rating .status-in-stock {
+  color: #10b981;
+  font-weight: 600;
+}
+.clickable-card { 
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 .clickable-card:hover {
-  opacity: 0.8;
-  transition: opacity 0.2s;
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+.clickable-card:hover .product-card-image {
+  opacity: 0.95;
 }
 
 /* --- Style Halaman Portfolio --- */
@@ -526,9 +544,9 @@ body {
 }
 .product-grid .featured-card-image { aspect-ratio: 1 / 1; }
 .product-grid .featured-card-price {
-  color: #7d6c68;
+  color: #ef4444;
   font-size: 0.875rem;
-  font-weight: 400;
+  font-weight: 600;
   margin: -5px 0 0 0;
 }
 
@@ -833,7 +851,7 @@ STYLE HALAMAN DETAIL PRODUK
   margin: 0;
 }
 .detail-price {
-  color: #161313;
+  color: #ef4444;
   letter-spacing: -0.025em;
   font-size: 28px;
   font-weight: 700;
@@ -1020,7 +1038,7 @@ STYLE HALAMAN DETAIL PRODUK
   margin: 0;
 }
 .detail-price-shopee {
-  color: #1b0d10;
+  color: #ef4444;
   letter-spacing: -0.025em;
   font-size: 28px;
   font-weight: 700;

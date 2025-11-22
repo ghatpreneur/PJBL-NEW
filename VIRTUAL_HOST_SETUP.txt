@@ -1,0 +1,81 @@
+========================================
+SETUP VIRTUAL HOST - LANGKAH TERAKHIR
+========================================
+
+✅ httpd-vhosts.conf sudah dikonfigurasi
+❌ hosts file perlu diedit MANUAL (butuh admin)
+
+========================================
+LANGKAH MANUAL (WAJIB):
+========================================
+
+1. BUKA NOTEPAD SEBAGAI ADMINISTRATOR
+   ------------------------------------
+   - Klik Start
+   - Ketik "Notepad"
+   - Klik kanan pada "Notepad"
+   - Pilih "Run as administrator"
+   - Klik "Yes" pada UAC prompt
+
+2. BUKA FILE HOSTS
+   ----------------
+   Di Notepad:
+   - File → Open
+   - Paste path ini: C:\Windows\System32\drivers\etc
+   - Ubah filter dari "Text Documents (*.txt)" ke "All Files (*.*)"
+   - Pilih file "hosts"
+   - Klik Open
+
+3. TAMBAHKAN BARIS INI DI PALING BAWAH
+   ------------------------------------
+   Copy paste baris ini:
+
+127.0.0.1      test.local
+
+4. SAVE FILE
+   ----------
+   - File → Save (Ctrl+S)
+   - Tutup Notepad
+
+5. RESTART APACHE DI XAMPP
+   -------------------------
+   - Buka XAMPP Control Panel
+   - Klik "Stop" di Apache
+   - Tunggu sampai berhenti
+   - Klik "Start" di Apache
+   - Tunggu sampai hijau
+
+========================================
+SETELAH SELESAI:
+========================================
+
+✅ Akses URL baru:
+   http://test.local/php/produk.php
+   
+✅ Akses homepage:
+   http://test.local/home.html
+   
+✅ Akses analytics:
+   http://test.local/php/customer_analytics.php
+
+========================================
+TROUBLESHOOTING:
+========================================
+
+Q: Error "Access Denied" saat save hosts?
+A: Pastikan Notepad dibuka sebagai Administrator
+
+Q: Apache tidak mau start?
+A: Check syntax di httpd-vhosts.conf
+   Buka: C:\xampp\apache\conf\extra\httpd-vhosts.conf
+
+Q: test.local tidak bisa diakses?
+A: - Pastikan hosts file sudah disimpan
+   - Restart Apache
+   - Clear DNS cache: ipconfig /flushdns
+
+Q: Masih mau pakai localhost?
+A: Pindahkan folder D:\test ke C:\xampp\htdocs\test
+   Lalu akses: http://localhost/test/php/produk.php
+
+========================================

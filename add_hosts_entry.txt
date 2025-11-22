@@ -1,0 +1,74 @@
+========================================
+TAMBAH ENTRY KE HOSTS FILE
+========================================
+
+Laragon belum otomatis menambahkan test.test ke hosts file.
+Anda perlu tambahkan MANUAL.
+
+========================================
+LANGKAH-LANGKAH:
+========================================
+
+1. BUKA NOTEPAD SEBAGAI ADMINISTRATOR
+   ------------------------------------
+   - Tekan tombol Windows
+   - Ketik: notepad
+   - Klik kanan "Notepad"
+   - Pilih "Run as administrator"
+   - Klik "Yes"
+
+2. BUKA FILE HOSTS
+   ----------------
+   Di Notepad:
+   - Klik: File → Open
+   - Paste path ini di address bar:
+     C:\Windows\System32\drivers\etc
+   - Ubah filter dari "Text Documents" ke "All Files (*.*)"
+   - Double click file: hosts
+   
+3. TAMBAHKAN BARIS INI (DI BAWAH BARIS TERAKHIR)
+   ----------------------------------------------
+   Scroll ke paling bawah, setelah baris:
+   127.0.0.1      peminjaman_barang.test #laragon magic!
+   
+   Tambahkan baris baru:
+   127.0.0.1      test.test              #laragon magic!
+
+4. SAVE FILE
+   ----------
+   - File → Save (Ctrl+S)
+   - Tutup Notepad
+
+5. FLUSH DNS CACHE
+   ----------------
+   - Tekan tombol Windows
+   - Ketik: cmd
+   - Klik kanan "Command Prompt"
+   - Pilih "Run as administrator"
+   - Ketik command ini: ipconfig /flushdns
+   - Tekan Enter
+   - Tutup CMD
+
+6. RESTART BROWSER
+   ----------------
+   - Tutup semua tab browser
+   - Tutup browser sepenuhnya
+   - Buka browser lagi
+
+7. TEST URL
+   ---------
+   Buka: http://test.test/php/produk.php
+
+========================================
+ATAU PAKAI LOCALHOST (LEBIH MUDAH):
+========================================
+
+Jika tidak mau edit hosts file, langsung akses:
+
+✅ http://localhost/test/php/produk.php
+✅ http://localhost/test/home.html
+✅ http://localhost/test/php/customer_analytics.php
+
+Ini PASTI JALAN karena tidak perlu hosts file!
+
+========================================

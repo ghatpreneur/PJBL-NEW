@@ -5,8 +5,13 @@ include 'config.php';
 // 2. Variabel buat nyimpen data
 $product_name = "";
 $price = "";
+$category = "";
 $status = "";
 $image_url = "";
+$gallery_1 = "";
+$gallery_2 = "";
+$gallery_3 = "";
+$gallery_4 = "";
 $product_id = 0; 
 
 // 3. Cek: Beneran ada 'id' yang dilempar?
@@ -26,8 +31,13 @@ if (isset($_GET['id'])) {
         $row = $result->fetch_assoc();
         $product_name = $row['product_name'];
         $price = $row['price'];
+        $category = isset($row['category']) ? $row['category'] : 'custom';
         $status = $row['status'];
         $image_url = $row['image_url'];
+        $gallery_1 = $row['gallery_image_1'] ?? '';
+        $gallery_2 = $row['gallery_image_2'] ?? '';
+        $gallery_3 = $row['gallery_image_3'] ?? '';
+        $gallery_4 = $row['gallery_image_4'] ?? '';
         $product_id = $row['id']; 
 
     } else {
@@ -40,22 +50,19 @@ if (isset($_GET['id'])) {
 }
 ?>
 
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
-  <link
-    rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?display=swap&family=Manrope%3Awght%4B400%3B500%3B700%3B800&family=Noto+Sans%3Awght%4B400%3B500%3B700%3B900"
-  />
-  
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?display=swap&family=Manrope:wght@400;500;700;800&family=Noto+Sans:wght@400;500;700;900" />
   <link rel="stylesheet" href="produk.css" />
-
   <title>Edit Product</title>
 </head>
 
 <body>
   <div class="main-container">
-    
     <div class="sidebar">
       <div class="sidebar-top">
         <h1>Admin Panel</h1>
@@ -81,54 +88,89 @@ if (isset($_GET['id'])) {
       </div>
 
       <div class="form-wrapper">
-        <form action="action_update.php" method="POST">
-          
+        <form action="action_update.php" method="POST" enctype="multipart/form-data">
           <input type="hidden" name="id" value="<?php echo $product_id; ?>" />
+          <input type="hidden" name="old_thumbnail" value="<?php echo htmlspecialchars($image_url); ?>" />
+          <input type="hidden" name="old_gallery_1" value="<?php echo htmlspecialchars($gallery_1); ?>" />
+          <input type="hidden" name="old_gallery_2" value="<?php echo htmlspecialchars($gallery_2); ?>" />
+          <input type="hidden" name="old_gallery_3" value="<?php echo htmlspecialchars($gallery_3); ?>" />
+          <input type="hidden" name="old_gallery_4" value="<?php echo htmlspecialchars($gallery_4); ?>" />
 
           <div class="form-group">
             <label for="product_name">Product Name</label>
-            <input 
-              type="text" 
-              name="product_name" 
-              id="product_name" 
-              value="<?php echo htmlspecialchars($product_name); ?>"
-            />
+            <input type="text" name="product_name" id="product_name" value="<?php echo htmlspecialchars($product_name); ?>" required />
           </div>
 
           <div class="form-group">
             <label for="price">Price</label>
-            <input 
-              type="text" 
-              name="price" 
-              id="price" 
-              value="<?php echo htmlspecialchars($price); ?>"
-            />
+            <input type="number" name="price" id="price" value="<?php echo number_format($price, 0, '.', ''); ?>" step="0.01" required />
+          </div>
+
+          <div class="form-group">
+            <label for="category">Category</label>
+            <select name="category" id="category" required>
+              <option value="custom" <?php echo ($category === 'custom') ? 'selected' : ''; ?>>Custom</option>
+              <option value="ready_to_use" <?php echo ($category === 'ready_to_use') ? 'selected' : ''; ?>>Ready to Use</option>
+            </select>
           </div>
 
           <div class="form-group">
             <label for="status">Status</label>
-            <input 
-              type="text" 
-              name="status" 
-              id="status" 
-              value="<?php echo htmlspecialchars($status); ?>"
-            />
+            <select name="status" id="status">
+              <option value="in stock" <?php echo ($status === 'in stock') ? 'selected' : ''; ?>>In Stock</option>
+              <option value="sold" <?php echo ($status === 'sold') ? 'selected' : ''; ?>>Sold</option>
+            </select>
           </div>
 
           <div class="form-group">
-            <label for="image_url">Image URL</label>
-            <input 
-              type="text" 
-              name="image_url" 
-              id="image_url" 
-              value="<?php echo htmlspecialchars($image_url); ?>"
-            />
+            <label for="thumbnail">Thumbnail Image (Main)</label>
+            <?php if ($image_url): ?>
+              <div style="margin-bottom: 8px;">
+                <img src="../<?php echo htmlspecialchars($image_url); ?>" alt="Current thumbnail" style="max-width: 150px; border-radius: 8px; border: 2px solid #e6d1d7;" />
+                <p style="color: #7d6c68; font-size: 12px; margin: 4px 0;">Current image</p>
+              </div>
+            <?php endif; ?>
+            <input type="file" name="thumbnail" id="thumbnail" accept="image/*" />
+            <small style="color: #7d6c68;">Kosongkan jika tidak ingin mengubah gambar</small>
           </div>
 
-          <button type="submit" class="btn btn-primary">
-            Update Product
-          </button>
+          <div class="form-group">
+            <label>Gallery Images (4 gambar preview)</label>
+            
+            <?php if ($gallery_1): ?>
+              <div style="margin-bottom: 8px;">
+                <img src="../<?php echo htmlspecialchars($gallery_1); ?>" alt="Gallery 1" style="max-width: 100px; border-radius: 8px; border: 2px solid #e6d1d7;" />
+              </div>
+            <?php endif; ?>
+            <input type="file" name="gallery_1" accept="image/*" />
+            <small style="color: #7d6c68; display: block; margin-bottom: 12px;">Preview gambar 1 (kosongkan jika tidak ingin ubah)</small>
+            
+            <?php if ($gallery_2): ?>
+              <div style="margin-bottom: 8px;">
+                <img src="../<?php echo htmlspecialchars($gallery_2); ?>" alt="Gallery 2" style="max-width: 100px; border-radius: 8px; border: 2px solid #e6d1d7;" />
+              </div>
+            <?php endif; ?>
+            <input type="file" name="gallery_2" accept="image/*" />
+            <small style="color: #7d6c68; display: block; margin-bottom: 12px;">Preview gambar 2 (kosongkan jika tidak ingin ubah)</small>
+            
+            <?php if ($gallery_3): ?>
+              <div style="margin-bottom: 8px;">
+                <img src="../<?php echo htmlspecialchars($gallery_3); ?>" alt="Gallery 3" style="max-width: 100px; border-radius: 8px; border: 2px solid #e6d1d7;" />
+              </div>
+            <?php endif; ?>
+            <input type="file" name="gallery_3" accept="image/*" />
+            <small style="color: #7d6c68; display: block; margin-bottom: 12px;">Preview gambar 3 (kosongkan jika tidak ingin ubah)</small>
+            
+            <?php if ($gallery_4): ?>
+              <div style="margin-bottom: 8px;">
+                <img src="../<?php echo htmlspecialchars($gallery_4); ?>" alt="Gallery 4" style="max-width: 100px; border-radius: 8px; border: 2px solid #e6d1d7;" />
+              </div>
+            <?php endif; ?>
+            <input type="file" name="gallery_4" accept="image/*" />
+            <small style="color: #7d6c68; display: block; margin-bottom: 12px;">Preview gambar 4 (kosongkan jika tidak ingin ubah)</small>
+          </div>
 
+          <button type="submit" class="btn btn-primary">Update Product</button>
         </form>
       </div>
     </div>

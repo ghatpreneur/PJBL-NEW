@@ -44,199 +44,292 @@ body, html {
   z-index: 100; /* Angka yang sangat tinggi */
 }
 
-.sidebar h1 {
-  font-size: 1rem; /* Dulu: text-base */
-  font-weight: 500; /* Dulu: font-medium */
-  margin: 0 0 1rem 0; /* Kasih jarak bawah */
-}
-
-.menu-items {
-  display: flex;
-  flex-direction: column;
-  gap: 8px; /* Dulu: gap-2 */
-}
-
+/* --- Sidebar top */
+.sidebar-top h1 { font-size: 20px; margin: 0 0 12px 0; }
+.menu-items { display:flex; flex-direction:column; gap:8px; }
 .menu-item {
-  display: flex;
-  align-items: center;
-  gap: 12px; /* Dulu: gap-3 */
-  padding: 8px 12px; /* Dulu: px-3 py-2 */
-  border-radius: 0.5rem; /* Dulu: rounded-lg */
-  text-decoration: none;
-  color: var(--text-primary);
-  cursor: pointer;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:8px 12px;
+  border-radius:8px;
+  text-decoration:none;
+  color: var(--text-secondary);
 }
-
-.menu-item.active {
-  background-color: var(--bg-accent-light); /* Dulu: bg-[#f3e8eb] */
+.menu-item:link,
+.menu-item:visited,
+.menu-item:hover,
+.menu-item:active {
+  color: var(--text-secondary);
+  text-decoration:none;
 }
+.menu-item.active { background-color: var(--bg-accent-light); }
+.menu-item p { margin:0; font-size:14px; color: var(--text-primary); }
 
-.menu-item p {
-  margin: 0;
-  font-size: 0.875rem; /* Dulu: text-sm */
-  font-weight: 500;
-}
+/* --- Buttons --- */
+.btn { cursor:pointer; border:none; border-radius:8px; padding:8px 12px; display:inline-flex; align-items:center; justify-content:center; line-height:1; }
+.btn-primary { background-color: var(--primary-accent); color:#fff; font-weight:700; }
+.btn-secondary { background-color: var(--bg-accent-light); color:var(--text-primary); font-weight:700; }
 
-.menu-item svg {
-  width: 24px;
-  height: 24px;
-  fill: currentColor;
-}
-
-/* --- Tombol (Button) --- */
-.btn {
-  cursor: pointer;
+/* Status Buttons */
+.status-btn{
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: white;
   border: none;
-  border-radius: 0.5rem;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.875rem; /* Dulu: text-sm */
+  cursor: default;
 }
 
-.btn-primary {
-  height: 40px; 
-  padding: 0 1rem; 
-  background-color: var(--primary-accent); 
-  color: var(--bg-color); 
-  font-weight: 700; 
-  
-  /* INI YANG WAJIB */
-  position: relative; 
-  z-index: 10;      
-  text-decoration: none; 
-
-  /* property lain yang udah ada sebelumnya */
-  cursor: pointer;
-  border: none;
-  border-radius: 0.5rem;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.875rem; 
+.status-in-stock {
+  background-color: #10b981; /* Green */
 }
 
-.btn-status {
-  height: 32px; /* Dulu: h-8 */
-  padding: 0 1rem; /* Dulu: px-4 */
-  background-color: var(--bg-accent-light);
-  color: var(--text-primary);
-  font-weight: 500; /* Dulu: font-medium */
-  width: 100%; /* Dulu: w-full */
+.status-sold {
+  background-color: #ef4444; /* Red */
 }
 
-/* --- Konten Utama --- */
-.content {
-  flex: 1; /* Biar ngisi sisa space */
-  max-width: 960px; /* Dulu: max-w-[960px] */
+/* Category Buttons */
+.category-custom {
+  background-color: #6b7280; /* Dark Gray */
+  color: white;
+}
+
+.category-ready {
+  background-color: #d1d5db; /* Light Gray */
+  color: #1b0e12; /* Dark text */
+}
+
+/* --- Content area --- */
+.content { flex:1; max-width:960px; display:flex; flex-direction:column; }
+.content-header h1 { font-size:28px; margin:0; padding:12px; }
+
+.table-wrapper { padding:12px; }
+.table-container { border:1px solid var(--border-color); border-radius:8px; overflow:hidden; background:#fff; }
+.product-table { width:100%; border-collapse:collapse; }
+.product-table th, .product-table td { padding:12px; font-size:14px; text-align:left; vertical-align:middle; }
+.product-table td { border-top:1px solid var(--border-color); height:72px; }
+.td-image .image-circle { width:40px; height:40px; border-radius:50%; background-size:cover; background-position:center; }
+.td-price { color:var(--text-secondary); }
+.td-actions { color:var(--text-secondary); font-weight:700; }
+
+.sidebar a.btn { display:flex; align-items:center; justify-content:center; width:240px; margin:0 auto; padding:12px 16px; text-decoration:none; }
+.sidebar a.btn span { display:inline-block; }
+
+/* Form styles */
+.form-wrapper { padding:12px; }
+.form-group { margin-bottom:12px; }
+.form-group label { display:block; margin-bottom:6px; font-weight:600; }
+.form-group input[type="text"] { width:100%; padding:10px; border:1px solid var(--border-color); border-radius:8px; }
+
+/* --- Customer Analytics Page --- */
+.analytics-content {
+  flex: 1;
+  max-width: 960px;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
 }
 
-.content-header {
-  padding: 1rem; /* Dulu: p-4 */
-}
-
-.content-header h1 {
-  font-size: 32px;
-  font-weight: 700; /* Dulu: font-bold */
-  margin: 0;
-}
-
-/* --- Tabel --- */
-.table-wrapper {
-  padding: 12px 1rem; /* Dulu: px-4 py-3 */
-}
-
-.table-container {
-  overflow: hidden;
-  border: 1px solid var(--border-color);
-  border-radius: 0.5rem;
-  background-color: var(--bg-color);
-}
-
-.product-table {
+.analytics-panel {
   width: 100%;
-  border-collapse: collapse; /* Ini penting biar border-nya nyatu */
+  max-width: 900px;
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 24px 28px;
+  box-shadow: 0 18px 40px rgba(27, 14, 18, 0.08);
+  border: 1px solid #f1dfe6;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
-.product-table th,
-.product-table td {
-  padding: 8px 1rem; /* Dulu: px-4 py-2 */
-  text-align: left;
-  font-size: 0.875rem;
-  vertical-align: middle; /* Biar rapi di tengah */
+.analytics-top-tabs {
+  display: flex;
+  gap: 8px;
 }
 
-.product-table th {
-  font-weight: 500;
-  padding-top: 12px;
-  padding-bottom: 12px;
-}
-
-.product-table td {
-  height: 72px; /* Dulu: h-[72px] */
-  border-top: 1px solid var(--border-color);
-}
-
-/* --- Styling Kolom Spesifik --- */
-.td-checkbox input[type="checkbox"] {
-  height: 20px; /* Dulu: h-5 */
-  width: 20px; /* Dulu: w-5 */
-  border-radius: 0.25rem;
-  border: 2px solid var(--border-color);
-}
-
-.td-image .image-circle {
-  width: 40px; /* Dulu: w-10 */
-  height: 40px;
-  border-radius: 50%; /* Dulu: rounded-full */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.td-price {
-  color: var(--text-secondary);
-}
-
-.td-actions {
-  color: var(--text-secondary);
-  font-weight: 700; /* Dulu: font-bold */
-}
-/* --- CSS Tambahan Buat Form --- */
-.form-wrapper {
-  padding: 1rem;
-}
-
-.form-group {
-  margin-bottom: 1.5rem; /* Kasih jarak antar input */
-}
-
-.form-group label {
-  display: block; /* Bikin labelnya di atas input */
-  margin-bottom: 0.5rem;
-  font-weight: 500;
-  font-size: 0.875rem;
-}
-
-.form-group input[type="text"] {
-  width: 100%; /* Biar inputnya full-width */
-  padding: 0.75rem;
-  font-size: 1rem;
-  border: 1px solid var(--border-color);
-  border-radius: 0.5rem;
-  background-color: #fff;
-  box-sizing: border-box; /* Biar padding gak bikin overflow */
-}
-
-.btn-secondary {
-  height: 40px;
-  padding: 0 1rem;
+.analytics-tab {
+  flex: 1;
+  text-align: center;
+  padding: 12px;
+  border-radius: 12px;
   background-color: var(--bg-accent-light);
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.analytics-tab.active {
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
   color: var(--text-primary);
-  font-weight: 700;
+}
+
+
+.analytics-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.analytics-range {
+  display: flex;
+  width: 100%;
+}
+
+.range-large {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: 0;
+  background-color: #f1dfe6;
+  padding: 2px;
+  border-radius: 999px;
+}
+
+.range-placeholder,
+.range-pill {
+  flex: 1;
+  text-align: center;
+}
+
+.range-placeholder {
+  opacity: 0;
+}
+
+.eyebrow-label {
+  margin: 0;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-secondary);
+}
+
+.analytics-header h1 {
+  margin: 4px 0 0;
+  font-size: 28px;
+}
+
+/* .analytics-range diatur di atas bersama .range-large */
+
+.range-pill {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  padding: 8px 20px;
+  border-radius: 999px;
+  font-weight: 600;
+  color: #7b4a5b;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.range-pill.ghost {
+  background: transparent;
+  color: var(--text-secondary);
   text-decoration: none;
 }
+
+.range-pill.active {
+  background-color: #fff;
+  color: var(--text-primary);
+  box-shadow: 0 8px 16px rgba(149, 80, 101, 0.25);
+}
+
+.analytics-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.analytics-card {
+  background: #fff;
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(27, 14, 18, 0.05);
+}
+
+.analytics-card.highlight {
+  background: #f7ebf0;
+}
+
+.card-label {
+  margin: 0 0 8px;
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.analytics-card h2 {
+  margin: 0;
+  font-size: 32px;
+}
+
+.trend {
+  margin: 6px 0 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.trend.positive { color: #16a34a; }
+.trend.negative { color: #dc2626; }
+
+.analytics-chart-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.chart-card {
+  background: linear-gradient(180deg, #fff 0%, #fef6fa 100%);
+  border-radius: 22px;
+  padding: 24px 28px;
+  box-shadow: 0 20px 45px rgba(27, 14, 18, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-height: 260px;
+}
+
+.chart-card-header h3 {
+  margin: 4px 0 0;
+  font-size: 24px;
+}
+
+.chart-card canvas {
+  width: 100% !important;
+  height: 160px !important;
+}
+
+.sparkline {
+  width: 100%;
+  height: 120px;
+}
+
+.sparkline path {
+  fill: none;
+  stroke: var(--text-secondary);
+  stroke-width: 4;
+  stroke-linecap: round;
+}
+
+.chart-x-axis {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #b88998;
+}
+
+.analytics-cta {
+  padding: 12px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+@media (max-width:768px) { .sidebar { display:none; } .main-container { padding:12px; } }

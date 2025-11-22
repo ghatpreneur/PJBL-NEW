@@ -1,0 +1,100 @@
+========================================
+SETUP LARAGON - CARA TERCEPAT
+========================================
+
+Karena Anda pakai LARAGON (bukan XAMPP), setupnya jauh lebih mudah!
+
+========================================
+LANGKAH-LANGKAH (5 MENIT):
+========================================
+
+1. COPY FOLDER KE LARAGON WWW
+   ---------------------------
+   - Buka File Explorer
+   - Copy folder: D:\test
+   - Paste ke: C:\laragon\www\
+   
+   Hasil: C:\laragon\www\test\
+
+2. RESTART LARAGON
+   ----------------
+   - Buka Laragon
+   - Klik "Stop All" (jika sedang jalan)
+   - Klik "Start All"
+   - Tunggu sampai Apache & MySQL hijau
+
+3. OTOMATIS DAPAT DOMAIN!
+   -----------------------
+   Laragon otomatis membuat domain: test.test
+   
+   ✅ Hosts file sudah otomatis ditambahkan
+   ✅ Virtual host sudah otomatis dikonfigurasi
+
+========================================
+URL BARU SETELAH COPY:
+========================================
+
+✅ Admin Panel:
+   http://test.test/php/produk.php
+   
+✅ Homepage:
+   http://test.test/home.html
+   
+✅ Customer Analytics:
+   http://test.test/php/customer_analytics.php
+   
+✅ Create Product:
+   http://test.test/php/new_product.php
+
+========================================
+SETUP DATABASE (WAJIB - SEKALI AJA):
+========================================
+
+Setelah copy folder, akses URL ini sekali:
+http://test.test/php/add_category_column.php
+
+Tunggu sampai muncul:
+"Kolom 'category' berhasil ditambahkan ke tabel products."
+
+========================================
+CATATAN PENTING:
+========================================
+
+⚠️  Folder D:\test tetap ada (tidak terhapus)
+⚠️  Copy manual lebih aman daripada command line
+⚠️  Pastikan MySQL di Laragon sudah running
+
+✅ Laragon otomatis handle:
+   - Virtual Host
+   - Hosts file
+   - SSL (opsional)
+
+========================================
+TROUBLESHOOTING:
+========================================
+
+Q: Domain test.test tidak bisa diakses?
+A: - Restart Laragon (Stop All → Start All)
+   - Check hosts file: C:\Windows\System32\drivers\etc\hosts
+   - Pastikan ada baris: 127.0.0.1    test.test
+
+Q: Database error?
+A: - Pastikan MySQL di Laragon sudah running (hijau)
+   - Buka phpMyAdmin: http://localhost/phpmyadmin
+   - Pastikan database 'db_adminpanel1' ada
+
+Q: CSS tidak muncul?
+A: - Hard reload browser: Ctrl + F5
+   - Clear cache: Ctrl + Shift + R
+
+========================================
+KEUNTUNGAN PAKAI LARAGON:
+========================================
+
+✓ Auto Virtual Host untuk setiap folder di www/
+✓ Auto update hosts file
+✓ Pretty URLs dengan .test domain
+✓ Tidak perlu konfigurasi manual
+✓ Built-in SSL support
+
+========================================

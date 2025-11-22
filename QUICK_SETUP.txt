@@ -1,0 +1,76 @@
+========================================
+PANDUAN CEPAT - Setup Admin Panel
+========================================
+
+MASALAH: Error "404 Not Found" saat buka admin panel
+PENYEBAB: Folder tidak ada di XAMPP document root
+
+========================================
+SOLUSI TERCEPAT:
+========================================
+
+1. PINDAH FOLDER KE HTDOCS
+   -------------------------
+   Pindahkan folder "test" ke:
+   C:\xampp\htdocs\test\
+   
+   (Copy semua file dari D:\test ke C:\xampp\htdocs\test\)
+
+2. NYALAKAN XAMPP
+   ---------------
+   - Buka XAMPP Control Panel
+   - Start Apache (hijau)
+   - Start MySQL (hijau)
+
+3. SETUP DATABASE (WAJIB - HANYA SEKALI)
+   --------------------------------------
+   Buka browser, akses:
+   http://localhost/test/php/add_category_column.php
+   
+   Tunggu sampai muncul:
+   "Kolom 'category' berhasil ditambahkan ke tabel products."
+
+4. TEST ADMIN PANEL
+   -----------------
+   Buka:
+   http://localhost/test/php/produk.php
+   
+   Klik "Create Product"
+   Pilih kategori: Custom atau Ready to Use
+   Simpan
+
+5. TEST WEBSITE
+   ------------
+   Buka:
+   http://localhost/test/home.html
+   
+   Klik menu "Products"
+   Test filter: All / Ready to Use / Custom
+
+========================================
+CATATAN PENTING:
+========================================
+
+✅ CSS sudah diperbaiki (relative path)
+✅ Kategori produk sudah terintegrasi
+✅ Filter sudah bekerja dengan database
+
+⚠️  Jika folder tetap di D:\test, perlu setup Virtual Host
+    (Lihat SETUP_CATEGORY.md untuk panduan lengkap)
+
+========================================
+TROUBLESHOOTING CEPAT:
+========================================
+
+Q: CSS tidak muncul?
+A: Hard reload browser (Ctrl+F5)
+
+Q: Filter tidak bekerja?
+A: Clear cache (Ctrl+Shift+R)
+
+Q: Database error?
+A: Pastikan MySQL di XAMPP sudah nyala
+
+========================================
+File Dokumentasi Lengkap: SETUP_CATEGORY.md
+========================================

@@ -1,0 +1,110 @@
+========================================
+SETUP UPLOAD GAMBAR PRODUK
+========================================
+
+Sistem upload gambar sudah diubah dari URL menjadi UPLOAD FILE dari galeri.
+Setiap produk sekarang punya:
+- 1 THUMBNAIL (gambar utama untuk catalog)
+- 4 GALLERY IMAGES (preview di detail produk)
+
+========================================
+LANGKAH SETUP (WAJIB):
+========================================
+
+1. UPDATE DATABASE
+   ----------------
+   Akses URL ini untuk menambahkan kolom gambar baru:
+   http://localhost/test/php/update_images_column.php
+   
+   Tunggu sampai muncul pesan sukses.
+
+2. TEST UPLOAD PRODUK BARU
+   -------------------------
+   a. Buka: http://localhost/test/php/produk.php
+   b. Klik "Create Product"
+   c. Isi form:
+      - Product Name: Test Produk
+      - Price: 150000
+      - Category: Custom
+      - Status: In Stock
+      - Thumbnail: Upload 1 gambar
+      - Gallery 1-4: Upload 4 gambar
+   d. Klik "Save New Product"
+   
+3. CEK HASIL
+   ----------
+   a. Buka catalog: http://localhost/test/home.html
+   b. Klik tab "Products"
+   c. Klik produk yang baru dibuat
+   d. Lihat detail produk - gallery sekarang pakai gambar yang di-upload
+
+========================================
+STRUKTUR FILE:
+========================================
+
+Folder uploads:
+D:\test\uploads\                    (untuk development)
+C:\laragon\www\test\uploads\        (untuk Laragon)
+
+Gambar tersimpan dengan nama unik:
+- Format: {uniqid}_{timestamp}.{ext}
+- Contoh: 6567a8f3_1732265843.jpg
+
+========================================
+FILE YANG DIUPDATE:
+========================================
+
+✓ new_product.php          - Form sekarang pakai file upload
+✓ action_save.php          - Handle 5 file uploads
+✓ api_products.php         - Return 5 image paths
+✓ home.js                  - Pakai gallery images dari DB
+✓ update_images_column.php - Script update database
+
+========================================
+CATATAN PENTING:
+========================================
+
+1. Produk LAMA masih pakai URL gambar
+   - Bisa tetap ditampilkan
+   - Edit produk lama untuk upload gambar baru
+
+2. File type yang diizinkan:
+   - JPG, JPEG, PNG, GIF, WEBP
+
+3. Ukuran file:
+   - Maksimal tergantung php.ini (default 2MB)
+   - Bisa diubah di php.ini: upload_max_filesize
+
+4. Folder uploads harus writable:
+   - Windows: sudah otomatis
+   - Linux: chmod 755 atau 775
+
+========================================
+TROUBLESHOOTING:
+========================================
+
+Q: Error "Failed to upload"?
+A: - Cek folder uploads/ ada dan bisa ditulis
+   - Cek php.ini: upload_max_filesize & post_max_size
+   - Restart Laragon
+
+Q: Gambar tidak muncul di catalog?
+A: - Cek path gambar di database (harus: uploads/filename.jpg)
+   - Cek file fisik ada di folder uploads/
+   - Hard refresh browser (Ctrl+F5)
+
+Q: Edit produk lama belum bisa upload?
+A: - Fitur edit akan diupdate nanti
+   - Saat ini bisa hapus dan buat ulang produk
+
+========================================
+TODO (OPTIONAL - NANTI):
+========================================
+
+[ ] Update edit_product.php untuk upload gambar
+[ ] Update action_update.php untuk handle edit gambar
+[ ] Tambah preview gambar sebelum upload
+[ ] Tambah crop/resize gambar otomatis
+[ ] Tambah delete gambar lama saat update
+
+========================================
