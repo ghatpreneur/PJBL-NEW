@@ -32,17 +32,17 @@ document.addEventListener("DOMContentLoaded", () => {
     // Data "Our Services" (Halaman Home)
     services: [
       {
-        name: "women's dresses",
+        name: "Women's Dresses",
         img: "photo/dres dewasa.png",
         price: "$120",
       },
       {
-        name: "children's dresses",
+        name: "Children's Dresses",
         img: "photo/dres anak.jpg",
         price: "$80",
       },
       {
-        name: "men's clothes",
+        name: "Men's Clothes",
         img: "photo/pria.png",
         price: "$150",
       },
