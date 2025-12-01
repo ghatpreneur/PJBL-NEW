@@ -102,8 +102,8 @@ if (isset($_GET['id'])) {
           </div>
 
           <div class="form-group">
-            <label for="price">Price</label>
-            <input type="number" name="price" id="price" value="<?php echo number_format($price, 0, '.', ''); ?>" step="0.01" required />
+            <label for="price">Price (Rp)</label>
+            <input type="text" name="price" id="price" value="<?php echo number_format($price, 0, ',', '.'); ?>" placeholder="Contoh: 200.000" required />
           </div>
 
           <div class="form-group">

@@ -82,7 +82,7 @@ $result = $koneksi->query($sql);
                 </td>
                 
                 <td class="td-price">
-                  $<?php echo number_format($row['price'], 2, '.', ','); ?>
+                  Rp <?php echo number_format($row['price'], 0, ',', '.'); ?>
                 </td>
                 
                 <td class="td-status">

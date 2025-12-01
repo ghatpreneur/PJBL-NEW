@@ -49,8 +49,8 @@
           </div>
 
           <div class="form-group">
-            <label for="price">Price</label>
-            <input type="number" name="price" id="price" value="" step="0.01" required />
+            <label for="price">Price (Rp)</label>
+            <input type="text" name="price" id="price" value="" placeholder="Contoh: 200.000" required />
           </div>
 
           <div class="form-group">

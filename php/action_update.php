@@ -100,7 +100,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // bind_param: s = string, d = double, i = integer
-    $stmt->bind_param('sdssssssi', $product_name, $price_val, $category, $status, $image_url, $gallery_1, $gallery_2, $gallery_3, $gallery_4, $id);
+    $stmt->bind_param('sdsssssssi', $product_name, $price_val, $category, $status, $image_url, $gallery_1, $gallery_2, $gallery_3, $gallery_4, $id);
 
     if ($stmt->execute()) {
         $stmt->close();
