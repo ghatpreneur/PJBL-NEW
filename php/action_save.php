@@ -11,10 +11,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $category = isset($_POST['category']) ? $koneksi->real_escape_string($_POST['category']) : 'custom';
     $status = $koneksi->real_escape_string($_POST['status']);
     
-    // 3b. Handle file uploads
-    $upload_dir = '../uploads/';
+   $upload_dir = __DIR__ . '/../uploads/';
+
+    // Cek apakah folder uploads di dalam PJBL_NEW sudah ada?
+    if (!file_exists($upload_dir)) {
+        // Jika belum ada, paksa buat (tapi lebih baik buat manual di langkah 1)
+        mkdir($upload_dir, 0777, true);
+    }
+
     $uploaded_files = [];
     $file_fields = ['thumbnail', 'gallery_1', 'gallery_2', 'gallery_3', 'gallery_4'];
+    // ... lanjut ke kode foreach ...
     
     foreach ($file_fields as $field) {
         if (isset($_FILES[$field]) && $_FILES[$field]['error'] === UPLOAD_ERR_OK) {
