@@ -11,7 +11,6 @@ createApp({
         { name: "Home", href: "#", page: "home" },
         { name: "Products", href: "#", page: "products" },
         { name: "About Us", href: "#" },
-        { name: "Contact", href: "#" },
       ],
 
       services: [

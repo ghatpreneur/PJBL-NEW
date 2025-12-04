@@ -1161,19 +1161,12 @@ STYLE HALAMAN DETAIL PRODUK
 }
 .btn-shopee .btn-icon { color: #fcf8f9; }
 
-/* --- Style Halaman About & Contact --- */
 .page-description {
   color: #161313;
   font-size: 1rem;
   line-height: 1.6;
   padding: 0.5rem 1rem 1.5rem 1rem;
   margin: 0;
-}
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  padding: 1rem;
 }
 .form-label {
   font-size: 0.875rem;
@@ -1537,32 +1530,6 @@ STYLE HALAMAN DETAIL PRODUK
   border: none;
 }
 
-/* --- Kolom Info Kontak --- */
-.contact-info-column {
-  display: flex;
-  flex-direction: column;
-  max-width: 960px;
-  flex: 1;
-}
-
-.contact-title {
-  color: var(--primary-text-color);
-  letter-spacing: -0.025em;
-  font-size: 28px;
-  font-weight: 700;
-  line-height: 1.25;
-  padding: 20px 16px 12px 16px;
-  text-align: left;
-}
-
-.contact-detail {
-  color: var(--primary-text-color);
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 1.5;
-  padding: 4px 16px 12px 16px; /* pt-1 pb-3 px-4 */
-}
-
 .social-media-group {
   display: flex;
   flex-wrap: wrap;
@@ -1634,22 +1601,8 @@ STYLE HALAMAN DETAIL PRODUK
     padding: 20px 10px;
   }
 
-  .form-column,
-  .contact-info-column {
-    width: 100%;
-    max-width: 480px; /* Batasi lebar untuk tampilan lebih baik */
-  }
-
-  .form-title,
-  .contact-title {
-    padding-left: 0;
-    padding-right: 0;
-    text-align: center;
-  }
-
   .form-group,
   .form-submit-group,
-  .contact-detail,
   .social-media-group,
   .map-image-group {
     padding-left: 0;

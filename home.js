@@ -16,7 +16,6 @@ document.addEventListener("DOMContentLoaded", () => {
       { name: "Products", href: "#", page: "products" },
       { name: "Portfolio", href: "#", page: "portfolio" },
       { name: "About Us", href: "#", page: "about" },
-      { name: "Contact", href: "#", page: "contact" },
     ],
 
     // Navigasi untuk halaman detail
@@ -129,7 +128,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const pageProducts = document.getElementById("page-products");
   const pagePortfolio = document.getElementById("page-portfolio");
   const pageAbout = document.getElementById("page-about");
-  const pageContact = document.getElementById("page-contact");
   
   // Kontainer halaman detail
   const pageDetail = document.getElementById("page-detail");
