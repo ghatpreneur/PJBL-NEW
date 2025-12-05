@@ -372,8 +372,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const detailHTML = `
       <div style="padding: 10px 2.5rem; max-width: 1200px; margin: 0 auto;">
-         <button onclick="showPage('products')" class="btn btn-secondary" style="width: auto; padding: 0 20px;">
-            ← Back to Products
+         <button data-page="products" class="btn btn-secondary" style="width: auto; padding: 0 20px;">
+            Back to Products
          </button>
       </div>
 
