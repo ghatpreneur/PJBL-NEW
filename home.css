@@ -1271,6 +1271,19 @@ STYLE HALAMAN DETAIL PRODUK
   font-size: 15px;
   background-color: #fff;
 }
+/* --- CSS UNTUK HALAMAN DETAIL --- */
+#page-detail {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #ffffff;
+    position: fixed; /* Ubah absolute jadi fixed biar lebih aman saat scroll */
+    top: 0;
+    left: 0;
+    z-index: 99999; /* Pastikan angka ini tinggi */
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto; /* Agar bisa discroll */
+}
 
 /* CTA button (quote) */
 .cta-button {

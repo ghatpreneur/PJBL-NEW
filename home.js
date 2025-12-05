@@ -346,193 +346,148 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // --- Render Halaman Detail (Memilih Custom atau Shopee) ---
+  // ==========================================
+  // FUNGSI RENDER DETAIL (Sesuai home.css)
+  // ==========================================
   function renderDetail() {
     const p = state.selectedProduct;
     if (!p) return;
 
-    if (p.type === "custom") {
-      pageDetail.innerHTML = renderDetailCustom(p);
-    } else {
-      pageDetail.innerHTML = renderDetailShopee(p);
-    }
-  }
-  
-  // --- Template HTML untuk Detail Custom ---
-  function renderDetailCustom(p) {
-    // Helper untuk membuat HTML
+    console.log("Render detail untuk:", p.name);
+
+    // Kita menyusun HTML string yang MENGGUNAKAN CLASS dari home.css kamu
+    // Perhatikan class seperti 'detail-page-wrapper', 'detail-title', dll.
+    
+    // 1. Siapkan Gallery Images (HTML)
+    // Gambar utama index 0, gambar kecil index 1,2,3
+    const mainImg = p.galleryImages[0];
+    const subImg1 = p.galleryImages[1];
+    const subImg2 = p.galleryImages[2];
+    const subImg3 = p.galleryImages[3];
+
     const sizesHTML = p.sizes.map(size => `
       <label class="size-option">
         ${size} <input type="radio" class="size-radio" name="product-size" />
       </label>`).join("");
 
-    return `
-      <div class="relative flex h-auto min-h-screen w-full flex-col bg-stone-50 group/design-root overflow-x-hidden">
-        <div class="layout-container flex h-full grow flex-col">
-          <header class="header-detail">
-            <div class="header-detail-left">
-              <a href="#" data-page="home" class="header-logo-link">
-                <div class="header-logo"></div>
-                <h2 class="header-brand-name">Sava Fashion</h2>
-              </a>
-              <nav class="header-nav-detail">${renderDetailNav('nav-active-detail')}</nav>
+    const detailHTML = `
+      <div style="padding: 10px 2.5rem; max-width: 1200px; margin: 0 auto;">
+         <button onclick="showPage('products')" class="btn btn-secondary" style="width: auto; padding: 0 20px;">
+            ← Back to Products
+         </button>
+      </div>
+
+      <div class="detail-page-wrapper">
+        <div class="detail-image-sidebar">
+          <div class="detail-image-gallery-wrapper">
+            <div class="detail-image-gallery-1">
+              <div class="gallery-image-main" style="background-image: url('${mainImg}')"></div>
             </div>
-            <div class="header-detail-right"></div>
-          </header>
-          <div class="detail-page-wrapper">
-            <div class="detail-image-sidebar">
-              <div class="detail-image-gallery-wrapper">
-                <div class="detail-image-gallery-1">
-                  <div class="gallery-image-main" style="background-image: url('${p.galleryImages[0]}')"></div>
-                </div>
-              </div>
-              <div class="detail-image-gallery-wrapper">
-                <div class="detail-image-gallery-2">
-                  <div class="gallery-image-sub-1" style="background-image: url('${p.galleryImages[1]}')"></div>
-                  <div class="gallery-image-sub-2" style="background-image: url('${p.galleryImages[2]}')"></div>
-                  <div class="gallery-image-sub-3" style="background-image: url('${p.galleryImages[3]}')"></div>
-                </div>
-              </div>
-            </div>
-            <div class="detail-info-sidebar">
-              <div class="breadcrumbs">
-                <a href="#" data-page="home" class="breadcrumb-link">Home</a>
-                <span class="breadcrumb-separator">/</span>
-                <a href="#" data-page="products" class="breadcrumb-link">${p.category}</a>
-                <span class="breadcrumb-separator">/</span>
-                <span class="breadcrumb-active">${p.name}</span>
-              </div>
-              <h1 class="detail-title">${p.name}</h1>
-              <h2 class="detail-price">${p.price}</h2>
-              <div class="rating-wrapper"></div>
-              <h3 class="detail-subtitle">Description</h3>
-              <p class="detail-description">${p.description}</p>
-              <h3 class="detail-subtitle">Size</h3>
-              <div class="size-picker">${sizesHTML}</div>
-              <div class="detail-button-wrapper">
-                <button class="btn-whatsapp">
-                  <div class="btn-icon"></div>
-                  <span class="truncate">Custom WhatsApp Now</span>
-                </button>
-              </div>
-              <div class="view-all-button-wrapper">
-                <button data-page="products" class="btn btn-secondary">
-                  <span class="truncate">← Back to Products</span>
-                </button>
-              </div>
+          </div>
+          <div class="detail-image-gallery-wrapper">
+            <div class="detail-image-gallery-2">
+               <div class="gallery-image-sub-1" style="background-image: url('${subImg1}')"></div>
+               <div class="gallery-image-sub-2" style="background-image: url('${subImg2}')"></div>
+               <div class="gallery-image-sub-3" style="background-image: url('${subImg3}')"></div>
             </div>
           </div>
         </div>
-      </div>`;
-  }
-  
-  // --- Template HTML untuk Detail Shopee ---
-  function renderDetailShopee(p) {
-    // Helper untuk membuat HTML
-    const sizesHTML = p.sizes.map(size => `
-      <label class="size-option-shopee">
-        ${size} <input type="radio" class="size-radio" name="product-size" />
-      </label>`).join("");
 
-    return `
-      <div class="relative flex h-auto min-h-screen w-full flex-col bg-[#fcf8f9] group/design-root overflow-x-hidden">
-        <div class="layout-container flex h-full grow flex-col">
-          <header class="header-detail-shopee">
-             <div class="header-detail-left">
-              <a href="#" data-page="home" class="header-logo-link">
-                <div class="header-logo"></div>
-                <h2 class="header-brand-name">Sava Fashion</h2>
+        <div class="detail-info-sidebar">
+           <div class="breadcrumbs">
+              <span class="breadcrumb-link" onclick="showPage('home')">Home</span>
+              <span class="breadcrumb-separator">/</span>
+              <span class="breadcrumb-link" onclick="showPage('products')">Products</span>
+              <span class="breadcrumb-separator">/</span>
+              <span class="breadcrumb-active">${p.name}</span>
+           </div>
+
+           <h1 class="detail-title">${p.name}</h1>
+           <h2 class="detail-price">${p.price}</h2>
+           
+           <div class="rating-wrapper">
+              <p class="product-card-rating" style="padding:0;">${p.rating}</p>
+           </div>
+
+           <h3 class="detail-subtitle">Description</h3>
+           <p class="detail-description">${p.description}</p>
+
+           <h3 class="detail-subtitle">Size</h3>
+           <div class="size-picker">${sizesHTML}</div>
+
+           <div class="detail-button-wrapper">
+              <a href="https://wa.me/6281252887815?text=Halo%20Sava%20Fashion,%20saya%20tertarik%20dengan%20produk%20${encodeURIComponent(p.name)}" 
+                 target="_blank" class="btn-whatsapp" style="text-decoration:none; display:flex;">
+                 <span class="truncate">Order via WhatsApp</span>
               </a>
-              <nav class="header-nav-detail">${renderDetailNav('nav-active-detail-shopee')}</nav>
-            </div>
-            <div class="header-detail-right"></div>
-          </header>
-          <div class="detail-page-wrapper">
-            <div class="detail-image-sidebar">
-              <div class="detail-image-gallery-wrapper">
-                <div class="detail-image-gallery-1">
-                  <div class="gallery-image-main" style="background-image: url('${p.galleryImages[0]}')"></div>
-                </div>
-              </div>
-              <div class="detail-image-gallery-wrapper">
-                <div class="detail-image-gallery-2">
-                  <div class="gallery-image-sub-1" style="background-image: url('${p.galleryImages[1]}')"></div>
-                  <div class="gallery-image-sub-2" style="background-image: url('${p.galleryImages[2]}')"></div>
-                  <div class="gallery-image-sub-3" style="background-image: url('${p.galleryImages[3]}')"></div>
-                </div>
-              </div>
-            </div>
-            <div class="detail-info-sidebar">
-              <div class="breadcrumbs">
-                <a href="#" data-page="home" class="breadcrumb-link-shopee">Home</a>
-                <span class="breadcrumb-separator-shopee">/</span>
-                <a href="#" data-page="products" class="breadcrumb-link-shopee">${p.category}</a>
-                <span class="breadcrumb-separator-shopee">/</span>
-                <span class="breadcrumb-active-shopee">${p.name}</span>
-              </div>
-              <h1 class="detail-title-shopee">${p.name}</h1>
-              <h2 class="detail-price-shopee">${p.price}</h2>
-              <div class="rating-wrapper"></div>
-              <h3 class="detail-subtitle-shopee">Description</h3>
-              <p class="detail-description-shopee">${p.description}</p>
-              <h3 class="detail-subtitle-shopee">Size</h3>
-              <div class="size-picker">${sizesHTML}</div>
-              <div class="detail-button-wrapper">
-                <button class="btn-shopee">
-                  <div class="btn-icon"></div>
-                  <span class="truncate">Checkout Shopee Now</span>
-                </button>
-              </div>
-              <div class="view-all-button-wrapper">
-                <button data-page="products" class="btn btn-secondary">
-                  <span class="truncate">← Back to Products</span>
-                </button>
-              </div>
-            </div>
-          </div>
+           </div>
         </div>
-      </div>`;
-  }
-  
-  // ===================================
-  // 4. FUNGSI UTAMA (Router & Controller)
-  // ===================================
+      </div>
+    `;
 
+    // Masukkan HTML ke dalam container
+    const pageDetail = document.getElementById("page-detail");
+    pageDetail.innerHTML = detailHTML;
+  }
+
+  // ==========================================
+  // FUNGSI SHOW PAGE (Logika Navigasi Stabil)
+  // ==========================================
   function showPage(pageName) {
-    // 1. Update State
     state.currentPage = pageName;
-    
-    // 2. Sembunyikan semua halaman
-    document.querySelectorAll(".page-content").forEach((page) => {
-      page.classList.add("page-hidden");
-    });
-    
-    // 3. Tampilkan halaman yang benar
-    if (pageName === "detail") {
-      mainView.classList.add("page-hidden"); // Sembunyikan wrapper utama
-      pageDetail.classList.remove("page-hidden"); // Tampilkan wrapper detail
-      renderDetail(); // Render konten detail
-    } else {
-      mainView.classList.remove("page-hidden"); // Tampilkan wrapper utama
-      pageDetail.classList.add("page-hidden"); // Sembunyikan wrapper detail
+    console.log("Navigasi ke:", pageName);
 
-      const activePage = document.getElementById(`page-${pageName}`);
-      if (activePage) {
-        activePage.classList.remove("page-hidden");
-      }
-      
-      // 4. Render konten dinamis untuk halaman yang aktif
-      if (pageName === "home") {
-        renderHome();
-      } else if (pageName === "products") {
-        renderProducts();
-      } else if (pageName === "portfolio") {
-        renderPortfolio();
-      }
+    const mainView = document.getElementById("main-view");
+    const pageDetail = document.getElementById("page-detail");
+
+    // Scroll ke atas setiap ganti halaman
+    window.scrollTo(0, 0);
+
+    if (pageName === "detail") {
+        // --- MODE DETAIL ---
+        // 1. Sembunyikan Main View (Home/List Produk)
+        if (mainView) {
+            mainView.style.display = "none"; 
+        }
+        
+        // 2. Tampilkan Page Detail
+        if (pageDetail) {
+            pageDetail.style.display = "block"; // Paksa tampil
+            pageDetail.classList.remove("page-hidden");
+            renderDetail(); // Generate kontennya
+        }
+
+    } else {
+        // --- MODE NORMAL (Home, Products, dll) ---
+        
+        // 1. Sembunyikan Page Detail
+        if (pageDetail) {
+            pageDetail.style.display = "none";
+        }
+
+        // 2. Tampilkan Main View
+        if (mainView) {
+            mainView.style.display = "block";
+        }
+
+        // 3. Atur Sub-halaman di dalam Main View
+        document.querySelectorAll("#main-view .page-content").forEach(el => {
+            el.classList.add("page-hidden"); // Sembunyikan semua sub-page
+        });
+
+        // 4. Munculkan sub-halaman yang diminta
+        const activePage = document.getElementById(`page-${pageName}`);
+        if (activePage) {
+            activePage.classList.remove("page-hidden");
+            
+            // Trigger render ulang jika perlu
+            if (pageName === "home") renderHome();
+            if (pageName === "products") renderProducts();
+            if (pageName === "portfolio") renderPortfolio();
+        }
     }
     
-    // 5. Selalu render ulang navigasi untuk status aktif
     renderNav();
-    window.scrollTo(0, 0);
   }
 
   // ===================================
