@@ -293,7 +293,7 @@ body {
   width: 100%;
   background-position: center;
   background-repeat: no-repeat;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 3 / 4;
   background-size: cover;
   border-radius: 0.5rem;
 }
@@ -542,7 +542,7 @@ body {
 
 /* --- Style Halaman Portfolio --- */
 .product-grid .featured-card {
-  min-width: 0;
+  min-width: 290px;
   gap: 0.75rem;
   padding-bottom: 0.75rem;
 }

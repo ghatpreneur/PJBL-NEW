@@ -89,22 +89,22 @@ document.addEventListener("DOMContentLoaded", () => {
     // Data Testimonials (Halaman Home)
     testimonials: [
       {
-        name: "Sophia",
+        name: "Marsha",
         quote:
-          '"I absolutely love the dress I ordered from Sava Fashion. The quality is amazing, and it fits perfectly!"',
-        img: "https://lh3.googleusercontent.com/aida-public/AB6AXuCPfM2M1SrxbN7wOoJJDE8qH7BjMUIlkhHAWTL1XYzfHIb_ONXAHb5ETHyC4HjQh4rmohx_s1Nr-_Q3_EYBGY75VhrZc33jhW7FrB-vJxpDPzw5h5Ns3KyjJu3xNVhvd202zjMZZ19-zwURx3E9Qa1SQbeiqK3OlzU14exxfrnTWCzH1FwaBie8hQgrBQ2vyzEJIFKfPbfe33nJgfGLpCNgatw-FXHDwZ30EXOpBHY9td2rm9iHsT_idyxWEz00xvrLCYOyOQfvhME-",
+          '"Thankyouu yaa sudah memperbaiki payet dress ini. Jadi bisa dipakai lagi dan gak jadull jadinya 😍🥰"',
+        img: "photo/testi1.jpeg",
       },
       {
-        name: "Ethan",
+        name: "Titi",
         quote:
-          '"The kids\' clothes are so stylish and comfortable. My son loves them!"',
-        img: "https://lh3.googleusercontent.com/aida-public/AB6AXuCMqfX42LRfSn8YtYENs_3FKzgJgJjPrfSrhBi6w4JAGPaBBMbohRkCy6ZxF-LkUsDp-6psm2kBwFiLenqwdS88bQ0TcySE1tobwXrN9JM4q_lO9gO6XiZBTgdBwpica0osx8jUNFLhSzaS4e6zTfxtFA4dumorCj55rUqz7pbG7W9ZxbC-NwnnR9D1lcH92g2G_HskM7tZljGk22Trjmw2NwsSG1fJOgDPag70wg5bl1xuqPMVTQvh-PsSboyLRELpz1Z5fYeeNa4E",
+          '"Wih lucuuu, bagusss semua miss. Sesuai ekspetasi!"',
+        img: "photo/testi2.jpeg",
       },
       {
-        name: "Olivia",
+        name: "Marsha",
         quote:
-          '"The custom design service is fantastic. I got exactly what I wanted, and it looks stunning!"',
-        img: "https://lh3.googleusercontent.com/aida-public/AB6AXuDac6gGPkga4DW-2dUB-H6MXhRPY9OE5kME8MUV0vwM6f64xj2vCjSfeVRyD9UUDtA2HJWgJrHP54d_oSD2LA8t9Vuem52H1cxe6OOxx9uhVvEfqLqp5U6aEV75I8Zku8c8SXiXRpKR2BtiqbQnXeY1EuDHq0LoNGWKJXT86mBkAye1zWK4IzQegaH8q-t6Qw32vcCyXYFI4tiMHNGVUpnriCJKEtugviw5MoF8tFoGkdPERsNNykQNmFIgZHqZO57-NRoba5rjbpdL",
+          '"Thankyouu yaa sudah memperbaiki payet dress ini. Jadi bisa dipakai lagi dan gak jadull jadinya 😍🥰"',
+        img: "photo/testi1.jpeg",
       },
     ],
 
