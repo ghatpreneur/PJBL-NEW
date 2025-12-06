@@ -48,12 +48,6 @@
             <h2 id="wa-total">1,234</h2>
             <p class="trend positive" id="wa-trend">+12%</p>
           </div>
-          <div class="analytics-card highlight" id="shopee-metric-card">
-            <p class="card-label">Total Shopee Clicks</p>
-            <h2 id="shopee-total">567</h2>
-            <p class="trend negative" id="shopee-trend">-5%</p>
-          </div>
-        </div>
 
         <div class="analytics-chart-grid">
           <div class="chart-card">
@@ -66,18 +60,6 @@
             </div>
             <canvas id="waChart" width="320" height="140"></canvas>
             <div class="chart-x-axis" id="wa-axis"></div>
-          </div>
-
-          <div class="chart-card">
-            <div class="chart-card-header">
-              <div>
-                <p class="card-label">Shopee Clicks Trend</p>
-                <h3 id="shopee-chart-total">567</h3>
-                <p class="trend negative" id="shopee-chart-trend">Last 7 Days -5%</p>
-              </div>
-            </div>
-            <canvas id="shopeeChart" width="320" height="140"></canvas>
-            <div class="chart-x-axis" id="shopee-axis"></div>
           </div>
         </div>
       </div>
@@ -93,11 +75,9 @@
     const chartData = {
       '7': {
         wa: [12, 18, 14, 20, 16, 22, 15],
-        shopee: [10, 9, 12, 11, 15, 13, 12]
       },
       '30': {
         wa: [42, 38, 45, 48],
-        shopee: [28, 30, 33, 36]
       }
     };
 
@@ -106,17 +86,11 @@
         waTotal: '1,234',
         waTrend: '+12%',
         waTrendType: 'positive',
-        shopeeTotal: '567',
-        shopeeTrend: '-5%',
-        shopeeTrendType: 'negative'
       },
       '30': {
         waTotal: '4,321',
         waTrend: '+18%',
         waTrendType: 'positive',
-        shopeeTotal: '2,210',
-        shopeeTrend: '+8%',
-        shopeeTrendType: 'positive'
       }
     };
 
@@ -156,7 +130,6 @@
     };
 
     const waChart = buildChart('waChart', chartData['7'].wa, '#955065', axisLabels['7']);
-    const shopeeChart = buildChart('shopeeChart', chartData['7'].shopee, '#c04d5e', axisLabels['7']);
 
     const renderAxis = (containerId, labels) => {
       const container = document.getElementById(containerId);
@@ -170,16 +143,11 @@
 
       const waTotalEl = document.getElementById('wa-total');
       const waTrendEl = document.getElementById('wa-trend');
-      const shopeeTotalEl = document.getElementById('shopee-total');
-      const shopeeTrendEl = document.getElementById('shopee-trend');
 
       const waChartTotalEl = document.getElementById('wa-chart-total');
       const waChartTrendEl = document.getElementById('wa-chart-trend');
-      const shopeeChartTotalEl = document.getElementById('shopee-chart-total');
-      const shopeeChartTrendEl = document.getElementById('shopee-chart-trend');
 
       if (waTotalEl) waTotalEl.textContent = metric.waTotal;
-      if (shopeeTotalEl) shopeeTotalEl.textContent = metric.shopeeTotal;
 
       if (waTrendEl) {
         waTrendEl.textContent = metric.waTrend;
@@ -187,19 +155,10 @@
         waTrendEl.classList.toggle('negative', metric.waTrendType === 'negative');
       }
 
-      if (shopeeTrendEl) {
-        shopeeTrendEl.textContent = metric.shopeeTrend;
-        shopeeTrendEl.classList.toggle('positive', metric.shopeeTrendType === 'positive');
-        shopeeTrendEl.classList.toggle('negative', metric.shopeeTrendType === 'negative');
-      }
-
       const rangeLabel = rangeKey === '7' ? 'Last 7 Days' : 'Last 30 Days';
 
       if (waChartTotalEl) waChartTotalEl.textContent = metric.waTotal;
       if (waChartTrendEl) waChartTrendEl.textContent = `${rangeLabel} ${metric.waTrend}`;
-
-      if (shopeeChartTotalEl) shopeeChartTotalEl.textContent = metric.shopeeTotal;
-      if (shopeeChartTrendEl) shopeeChartTrendEl.textContent = `${rangeLabel} ${metric.shopeeTrend}`;
 
       const labels = axisLabels[rangeKey] || axisLabels['7'];
 
@@ -209,14 +168,7 @@
         waChart.update();
       }
 
-      if (shopeeChart && chartData[rangeKey]) {
-        shopeeChart.data.datasets[0].data = chartData[rangeKey].shopee;
-        shopeeChart.data.labels = labels;
-        shopeeChart.update();
-      }
-
       renderAxis('wa-axis', labels);
-      renderAxis('shopee-axis', labels);
 
       const rangeButtons = document.querySelectorAll('.range-pill');
       rangeButtons.forEach((btn) => {

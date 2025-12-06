@@ -7,8 +7,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // State untuk melacak halaman & data
   const state = {
     currentPage: "home", // Halaman awal
-    selectedProduct: null, // Untuk menyimpan produk yang diklik
-    productFilter: "all", // Status filter: 'all', 'shopee', 'custom'
+    selectedProduct: null,
+    productFilter: "all",
 
     // Navigasi untuk halaman utama
     navLinks: [
@@ -173,11 +173,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const priceValue =
       typeof item.price === "number" ? item.price : parseFloat(item.price);
     
-    // Ambil kategori dari database, default 'custom'
     const categoryFromDb = item.category ?? "custom";
-    
-    // Tentukan type untuk filter: 'custom' atau 'shopee' (ready to use)
-    const productType = categoryFromDb === "ready_to_use" ? "shopee" : "custom";
+
+    const productType = categoryFromDb === "ready_to_use" ? "custom" : "custom";
     
     // Ambil gallery images dari database
     const galleryImages = [
@@ -345,10 +343,6 @@ document.addEventListener("DOMContentLoaded", () => {
       .join("");
   }
 
-  // --- Render Halaman Detail (Memilih Custom atau Shopee) ---
-  // ==========================================
-  // FUNGSI RENDER DETAIL (Sesuai home.css)
-  // ==========================================
   function renderDetail() {
     const p = state.selectedProduct;
     if (!p) return;
