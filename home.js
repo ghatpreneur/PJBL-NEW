@@ -175,7 +175,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
     const categoryFromDb = item.category ?? "custom";
 
-    const productType = categoryFromDb === "ready_to_use" ? "custom" : "custom";
+    const productType = categoryFromDb === "ready_to_use" ? "customm" : "custom";
     
     // Ambil gallery images dari database
     const galleryImages = [

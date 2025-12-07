@@ -583,7 +583,10 @@ STYLE HALAMAN DETAIL PRODUK
   color: #b18c86; /* Warna primer Custom */
   font-weight: 700; /* Bold */
 }
-
+.nav-link-detail.nav-active-detail-customm {
+  color: #d41131; /* Warna primer Shopee */
+  font-weight: 700; /* Bold */
+}
 .header-detail-right {
   display: flex;
   flex: 1 1 0%;
@@ -664,6 +667,88 @@ STYLE HALAMAN DETAIL PRODUK
   height: 2.5rem;
   background-color: #efecec;
   color: #161313;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  padding-left: 0.625rem;
+  padding-right: 0.625rem;
+  border: none;
+}
+/* --- Header Detail --- */
+.header-detail-shopee {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  white-space: nowrap;
+  border-bottom: 1px solid #f3e7e9;
+  padding: 0.75rem 2.5rem;
+  color: #1b0d10;
+}
+.header-detail-shopee .nav-link-detail,
+.header-detail-shopee .header-brand-name,
+.header-detail-shopee .logo-icon {
+  color: #1b0d10;
+}
+.search-bar-wrapper-shopee {
+  display: flex;
+  flex-direction: column;
+  min-width: 160px;
+  height: 2.5rem;
+  max-width: 256px;
+}
+.search-bar-wrapper-shopee > div {
+  display: flex;
+  width: 100%;
+  flex: 1 1 0%;
+  align-items: stretch;
+  border-radius: 0.5rem;
+  height: 100%;
+}
+.search-icon-wrapper-shopee {
+  color: #9a4c59;
+  display: flex;
+  background-color: #f3e7e9;
+  align-items: center;
+  justify-content: center;
+  padding-left: 1rem;
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+}
+.search-input-shopee {
+  flex: 1 1 0%;
+  width: 100%;
+  min-width: 0;
+  resize: none;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  color: #1b0d10;
+  border: none;
+  background-color: #f3e7e9;
+  height: 100%;
+  padding-left: 0.5rem;
+  padding-right: 1rem;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+.search-input-shopee::placeholder { color: #9a4c59; }
+.search-input-shopee:focus {
+  outline: 0;
+  box-shadow: none;
+  border: none;
+}
+.icon-button-shopee {
+  display: flex;
+  max-width: 480px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  height: 2.5rem;
+  background-color: #f3e7e9;
+  color: #1b0d10;
   gap: 0.5rem;
   font-size: 0.875rem;
   font-weight: 700;
@@ -927,6 +1012,155 @@ STYLE HALAMAN DETAIL PRODUK
   border: none;
 }
 .btn-icon { color: #161313; }
+/* --- Info Detail (SHOPEE) --- */
+.breadcrumb-link-shopee {
+  color: #9a4c59;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+.breadcrumb-separator-shopee {
+  color: #9a4c59;
+  font-size: 1rem;
+  font-weight: 500;
+}
+.breadcrumb-active-shopee {
+  color: #1b0d10;
+  font-size: 1rem;
+  font-weight: 500;
+}
+.detail-title-shopee {
+  color: #1b0d10;
+  letter-spacing: -0.025em;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.25;
+  padding: 0 1rem 0.75rem 1rem;
+  margin: 0;
+}
+.detail-price-shopee {
+  color: #ef4444;
+  letter-spacing: -0.025em;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.25;
+  padding: 0.5rem 1rem 0.75rem 1rem;
+  margin: 0;
+}
+.rating-stars-shopee {
+  display: flex;
+  gap: 0.125rem;
+}
+.star-icon-shopee { color: #d41131; }
+.star-icon-half-shopee { color: #d41131; }
+.rating-reviews-shopee {
+  color: #1b0d10;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0;
+}
+.rating-bars-shopee {
+  display: grid;
+  min-width: 200px;
+  max-width: 400px;
+  flex: 1 1 0%;
+  grid-template-columns: 20px 1fr 40px;
+  align-items: center;
+  gap: 0.75rem 0;
+}
+.rating-bars-shopee p {
+  color: #1b0d10;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin: 0;
+}
+.rating-bars-shopee .rating-bar-track-shopee {
+  display: flex;
+  height: 0.5rem;
+  flex: 1 1 0%;
+  overflow: hidden;
+  border-radius: 9999px;
+  background-color: #e7cfd3;
+}
+.rating-bars-shopee .rating-bar-fill-shopee {
+  border-radius: 9999px;
+  background-color: #d41131;
+}
+.rating-bars-shopee .rating-bar-percent-shopee {
+  color: #9a4c59;
+  text-align: right;
+}
+
+.detail-subtitle-shopee {
+  color: #1b0d10;
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+  padding: 1rem 1rem 0.5rem 1rem;
+  margin: 0;
+}
+.detail-description-shopee {
+  color: #1b0d10;
+  font-size: 1rem;
+  line-height: 1.5;
+  padding: 0.25rem 1rem 0.75rem 1rem;
+  margin: 0;
+}
+.size-option-shopee {
+  font-size: 0.875rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  border: 1px solid #e7cfd3;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  height: 2.75rem;
+  color: #1b0d10;
+  position: relative;
+  cursor: pointer;
+}
+.size-option-shopee:has(:checked) {
+  border: 3px solid #d41131;
+  padding-left: 0.875rem;
+  padding-right: 0.875rem;
+}
+.color-option-shopee {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 9999px;
+  border: 1px solid #e7cfd3;
+  cursor: pointer;
+}
+.color-option-shopee:has(:checked) {
+  border: 3px solid #fcf8f9;
+  box-shadow: 0 0 0 1px #1b0d10; /* ring-1 */
+}
+.btn-shopee {
+  display: flex;
+  min-width: 84px;
+  max-width: 480px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  height: 3rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  flex: 1 1 0%;
+  background-color: #d41131;
+  color: #fcf8f9;
+  gap: 0.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.015em;
+  border: none;
+}
+.btn-shopee .btn-icon { color: #fcf8f9; }
 
 .page-description {
   color: #161313;
